@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel题库转换工具</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #374151;
+            margin-bottom: 16px;
+        }
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .upload-area:hover {
+            border-color: #4f46e5;
+            background: #f5f3ff;
+        }
+        .upload-area.dragover {
+            border-color: #4f46e5;
+            background: #eef2ff;
+        }
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .upload-text {
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        .upload-hint {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .mapping-section {
+            display: none;
+        }
+        .mapping-section.show {
+            display: block;
+        }
+        .mapping-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .mapping-label {
+            width: 120px;
+            font-size: 14px;
+            color: #374151;
+        }
+        .mapping-select {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #4338ca;
+        }
+        .btn-primary:disabled {
+            background: #c7d2fe;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        .output-area {
+            background: #1f2937;
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+        }
+        .output-area pre {
+            color: #e5e7eb;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 16px;
+        }
+        .preview-table th,
+        .preview-table td {
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        .preview-table th {
+            background: #f9fafb;
+            font-weight: 600;
+        }
+        .preview-table tbody tr:hover {
+            background: #f9fafb;
+        }
+        .status {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .format-hint {
+            background: #fef3c7;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 14px;
+            color: #92400e;
+            margin-bottom: 16px;
+        }
+        .format-hint code {
+            background: #fde68a;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Excel题库转换工具</h1>
+        
+        <div class="card">
+            <h2>1. 上传Excel文件</h2>
+            <div class="format-hint">
+                <strong>Excel格式要求：</strong><br>
+                建议包含列：题号、题型（单选/多选）、分类、题目、选项A、选项B、选项C、选项D、答案（如A、B、ABC）、解析<br>
+                答案列使用字母表示，如：<code>A</code> <code>B</code> <code>ABC</code> <code>ACD</code>
+            </div>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">点击上传或拖拽文件到这里</div>
+                <div class="upload-hint">支持 .xlsx, .xls, .csv 格式</div>
+            </div>
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv">
+        </div>
+
+        <div class="card mapping-section" id="mappingSection">
+            <h2>2. 列映射配置</h2>
+            <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px;">
+                请选择Excel中对应的列，不需要的字段可以选择"不使用"
+            </p>
+            
+            <div class="mapping-row">
+                <span class="mapping-label">题目ID列：</span>
+                <select class="mapping-select" id="mapId">
+                    <option value="">自动生成</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">题型列：</span>
+                <select class="mapping-select" id="mapType">
+                    <option value="">不使用（默认单选）</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">分类列：</span>
+                <select class="mapping-select" id="mapCategory">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">题目内容列：</span>
+                <select class="mapping-select" id="mapQuestion" required>
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项A列：</span>
+                <select class="mapping-select" id="mapOptionA" required>
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项B列：</span>
+                <select class="mapping-select" id="mapOptionB" required>
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项C列：</span>
+                <select class="mapping-select" id="mapOptionC">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项D列：</span>
+                <select class="mapping-select" id="mapOptionD">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项E列：</span>
+                <select class="mapping-select" id="mapOptionE">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">选项F列：</span>
+                <select class="mapping-select" id="mapOptionF">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">答案列：</span>
+                <select class="mapping-select" id="mapAnswer" required>
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mapping-row">
+                <span class="mapping-label">解析列：</span>
+                <select class="mapping-select" id="mapExplanation">
+                    <option value="">不使用</option>
+                </select>
+            </div>
+            
+            <h3 style="margin-top: 24px; margin-bottom: 12px; font-size: 16px;">数据预览（前5行）</h3>
+            <div style="overflow-x: auto;">
+                <table class="preview-table" id="previewTable"></table>
+            </div>
+            
+            <div class="actions">
+                <button class="btn btn-primary" onclick="convertData()">转换数据</button>
+            </div>
+        </div>
+
+        <div class="card" id="resultSection" style="display: none;">
+            <h2>3. 转换结果</h2>
+            <div class="status" id="statusMessage"></div>
+            <div class="output-area">
+                <pre id="outputCode"></pre>
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary" onclick="copyCode()">复制代码</button>
+                <button class="btn btn-secondary" onclick="downloadFile()">下载 questions.js</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let excelData = [];
+        let headers = [];
+        
+        // 上传区域点击
+        document.getElementById('uploadArea').addEventListener('click', () => {
+            document.getElementById('fileInput').click();
+        });
+        
+        // 拖拽上传
+        const uploadArea = document.getElementById('uploadArea');
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file) processFile(file);
+        });
+        
+        // 文件选择
+        document.getElementById('fileInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) processFile(file);
+        });
+        
+        // 处理文件
+        function processFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+                    
+                    if (jsonData.length < 2) {
+                        alert('Excel文件内容为空或格式不正确！');
+                        return;
+                    }
+                    
+                    headers = jsonData[0].map(h => String(h || '').trim());
+                    excelData = jsonData.slice(1).filter(row => row.some(cell => cell !== undefined && cell !== ''));
+                    
+                    updateMappingOptions();
+                    showPreview();
+                    document.getElementById('mappingSection').classList.add('show');
+                    document.getElementById('resultSection').style.display = 'none';
+                    
+                } catch (err) {
+                    alert('文件解析失败：' + err.message);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // 更新映射选项
+        function updateMappingOptions() {
+            const selects = [
+                'mapId', 'mapType', 'mapCategory', 'mapQuestion',
+                'mapOptionA', 'mapOptionB', 'mapOptionC', 'mapOptionD',
+                'mapOptionE', 'mapOptionF', 'mapAnswer', 'mapExplanation'
+            ];
+            
+            selects.forEach(id => {
+                const select = document.getElementById(id);
+                const defaultOption = select.options[0].cloneNode(true);
+                select.innerHTML = '';
+                select.appendChild(defaultOption);
+                
+                headers.forEach((header, index) => {
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = `${index + 1}. ${header}`;
+                    select.appendChild(option);
+                });
+            });
+            
+            // 尝试自动匹配
+            autoMapColumns();
+        }
+        
+        // 自动匹配列
+        function autoMapColumns() {
+            const mappings = {
+                'mapId': ['题号', 'id', '序号', '编号'],
+                'mapType': ['题型', '类型', 'type'],
+                'mapCategory': ['分类', '类别', 'category', '章节'],
+                'mapQuestion': ['题目', '问题', 'question', '题干'],
+                'mapOptionA': ['选项a', 'a', '选项1', 'optiona'],
+                'mapOptionB': ['选项b', 'b', '选项2', 'optionb'],
+                'mapOptionC': ['选项c', 'c', '选项3', 'optionc'],
+                'mapOptionD': ['选项d', 'd', '选项4', 'optiond'],
+                'mapOptionE': ['选项e', 'e', '选项5', 'optione'],
+                'mapOptionF': ['选项f', 'f', '选项6', 'optionf'],
+                'mapAnswer': ['答案', 'answer', '正确答案'],
+                'mapExplanation': ['解析', '解答', 'explanation', '说明']
+            };
+            
+            Object.keys(mappings).forEach(selectId => {
+                const keywords = mappings[selectId];
+                const select = document.getElementById(selectId);
+                
+                headers.forEach((header, index) => {
+                    const headerLower = header.toLowerCase();
+                    if (keywords.some(kw => headerLower.includes(kw.toLowerCase()))) {
+                        select.value = index;
+                    }
+                });
+            });
+        }
+        
+        // 显示预览
+        function showPreview() {
+            const table = document.getElementById('previewTable');
+            let html = '<thead><tr>';
+            headers.forEach((h, i) => {
+                html += `<th>${i + 1}. ${h}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            
+            excelData.slice(0, 5).forEach(row => {
+                html += '<tr>';
+                headers.forEach((_, i) => {
+                    html += `<td>${row[i] !== undefined ? row[i] : ''}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody>';
+            
+            table.innerHTML = html;
+        }
+        
+        // 转换数据
+        function convertData() {
+            const mapQuestion = document.getElementById('mapQuestion').value;
+            const mapAnswer = document.getElementById('mapAnswer').value;
+            const mapOptionA = document.getElementById('mapOptionA').value;
+            const mapOptionB = document.getElementById('mapOptionB').value;
+            
+            if (!mapQuestion || !mapAnswer || !mapOptionA || !mapOptionB) {
+                alert('请至少选择：题目内容、选项A、选项B、答案列！');
+                return;
+            }
+            
+            const mapId = document.getElementById('mapId').value;
+            const mapType = document.getElementById('mapType').value;
+            const mapCategory = document.getElementById('mapCategory').value;
+            const mapOptionC = document.getElementById('mapOptionC').value;
+            const mapOptionD = document.getElementById('mapOptionD').value;
+            const mapOptionE = document.getElementById('mapOptionE').value;
+            const mapOptionF = document.getElementById('mapOptionF').value;
+            const mapExplanation = document.getElementById('mapExplanation').value;
+            
+            const questions = [];
+            let errorCount = 0;
+            
+            excelData.forEach((row, index) => {
+                try {
+                    const question = row[mapQuestion];
+                    if (!question) return;
+                    
+                    // 构建选项数组
+                    const options = [];
+                    if (mapOptionA && row[mapOptionA]) options.push(String(row[mapOptionA]).trim());
+                    if (mapOptionB && row[mapOptionB]) options.push(String(row[mapOptionB]).trim());
+                    if (mapOptionC && row[mapOptionC]) options.push(String(row[mapOptionC]).trim());
+                    if (mapOptionD && row[mapOptionD]) options.push(String(row[mapOptionD]).trim());
+                    if (mapOptionE && row[mapOptionE]) options.push(String(row[mapOptionE]).trim());
+                    if (mapOptionF && row[mapOptionF]) options.push(String(row[mapOptionF]).trim());
+                    
+                    if (options.length < 2) return;
+                    
+                    // 解析答案
+                    const answerStr = String(row[mapAnswer] || '').toUpperCase().trim();
+                    let answer = parseAnswer(answerStr);
+                    
+                    // 判断题型
+                    let type = 'single';
+                    if (mapType && row[mapType]) {
+                        const typeStr = String(row[mapType]).toLowerCase();
+                        if (typeStr.includes('多选') || typeStr.includes('multiple')) {
+                            type = 'multiple';
+                        }
+                    } else if (Array.isArray(answer) && answer.length > 1) {
+                        type = 'multiple';
+                    }
+                    
+                    // 单选题答案转为单个数字
+                    if (type === 'single' && Array.isArray(answer)) {
+                        answer = answer[0];
+                    }
+                    
+                    const q = {
+                        id: mapId ? (row[mapId] || index + 1) : index + 1,
+                        type: type,
+                        question: String(question).trim(),
+                        options: options,
+                        answer: answer
+                    };
+                    
+                    if (mapCategory && row[mapCategory]) {
+                        q.category = String(row[mapCategory]).trim();
+                    }
+                    
+                    if (mapExplanation && row[mapExplanation]) {
+                        q.explanation = String(row[mapExplanation]).trim();
+                    }
+                    
+                    questions.push(q);
+                    
+                } catch (err) {
+                    errorCount++;
+                    console.error(`第${index + 2}行转换失败:`, err);
+                }
+            });
+            
+            // 生成代码
+            const code = `// 题库数据文件
+// 共 ${questions.length} 道题目
+// 生成时间: ${new Date().toLocaleString()}
+
+window.QUESTIONS = ${JSON.stringify(questions, null, 4)};`;
+            
+            document.getElementById('outputCode').textContent = code;
+            document.getElementById('resultSection').style.display = 'block';
+            
+            const statusEl = document.getElementById('statusMessage');
+            if (errorCount > 0) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `转换完成！成功 ${questions.length} 道，失败 ${errorCount} 道`;
+            } else {
+                statusEl.className = 'status success';
+                statusEl.textContent = `转换成功！共 ${questions.length} 道题目`;
+            }
+            
+            // 滚动到结果
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 解析答案字母
+        function parseAnswer(str) {
+            const letterMap = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
+            const answers = [];
+            
+            for (let char of str) {
+                if (letterMap[char] !== undefined) {
+                    answers.push(letterMap[char]);
+                }
+            }
+            
+            return answers.length === 1 ? answers[0] : answers;
+        }
+        
+        // 复制代码
+        function copyCode() {
+            const code = document.getElementById('outputCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('代码已复制到剪贴板！\n请粘贴到 questions.js 文件中替换原有内容。');
+            }).catch(() => {
+                // 降级方案
+                const textarea = document.createElement('textarea');
+                textarea.value = code;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('代码已复制！');
+            });
+        }
+        
+        // 下载文件
+        function downloadFile() {
+            const code = document.getElementById('outputCode').textContent;
+            const blob = new Blob([code], { type: 'application/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'questions.js';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
