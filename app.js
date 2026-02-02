@@ -290,6 +290,7 @@ function submitAnswer() {
     const resultCard = document.getElementById('result-card');
     const resultIcon = document.getElementById('result-icon');
     const resultText = document.getElementById('result-text');
+    const correctAnswerDiv = document.getElementById('correct-answer');
     const explanation = document.getElementById('explanation');
     
     if (isCorrect) {
@@ -309,12 +310,18 @@ function submitAnswer() {
         }
     }
     
+    // 显示正确答案
+    const optionLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const correctLabels = correctAnswers.map(idx => optionLabels[idx]).join('、');
+    correctAnswerDiv.innerHTML = `<strong>正确答案：</strong><span class="answer-highlight">${correctLabels}</span>`;
+    
     // 显示解析
     if (question.explanation) {
         explanation.textContent = question.explanation;
         explanation.style.display = 'block';
     } else {
-        explanation.style.display = 'none';
+        explanation.textContent = '暂无解析';
+        explanation.style.display = 'block';
     }
     
     resultCard.classList.add('show');

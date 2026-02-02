@@ -456,6 +456,27 @@ body {
     color: var(--error-color);
 }
 
+.correct-answer {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border-radius: 8px;
+    border-left: 4px solid var(--success-color);
+}
+
+.correct-answer strong {
+    color: var(--text-secondary);
+}
+
+.correct-answer .answer-highlight {
+    color: var(--success-color);
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
 .explanation {
     font-size: 14px;
     color: var(--text-secondary);
@@ -560,5 +581,13 @@ body {
     
     .option-item.selected {
         background: #312e81;
+    }
+    
+    .correct-answer {
+        background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    }
+    
+    .correct-answer strong {
+        color: #9ca3af;
     }
 }
