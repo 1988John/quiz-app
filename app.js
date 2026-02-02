@@ -315,11 +315,11 @@ function submitAnswer() {
     const correctLabels = correctAnswers.map(idx => optionLabels[idx]).join('、');
     const selectedLabels = selectedOptions.map(idx => optionLabels[idx]).join('、');
     answerRow.innerHTML = `
+        <div class="answer-item selected-answer">
+            <strong>我的答案：</strong><span class="answer-selected ${isCorrect ? 'correct' : 'wrong'}">${selectedLabels}</span>
+        </div>
         <div class="answer-item correct-answer">
             <strong>正确答案：</strong><span class="answer-highlight">${correctLabels}</span>
-        </div>
-        <div class="answer-item selected-answer">
-            <strong>选择答案：</strong><span class="answer-selected ${isCorrect ? 'correct' : 'wrong'}">${selectedLabels}</span>
         </div>
     `;
     
