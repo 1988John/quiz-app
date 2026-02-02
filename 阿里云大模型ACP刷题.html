@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>阿里云大模型ACP刷题</title>
+    <title>ACP刷题助手</title>
     <style>
 * {
     margin: 0;
@@ -560,10 +560,9 @@ body {
 </head>
 <body>
     <div class="app-container">
-        <!-- 首页 -->
         <div id="home-page" class="page active">
             <div class="home-header">
-                <h1>📚 刷题助手</h1>
+                <h1>📚 ACP刷题助手</h1>
                 <p class="subtitle">阿里云大模型ACP · 553题</p>
             </div>
             <div class="stats-card">
@@ -604,18 +603,13 @@ body {
             </div>
             <button class="reset-btn" onclick="resetProgress()">重置学习进度</button>
         </div>
-
-        <!-- 分类页面 -->
         <div id="category-page" class="page">
             <div class="page-header">
                 <button class="back-btn" onclick="goHome()">‹ 返回</button>
                 <h2>选择分类</h2>
             </div>
-            <div class="category-list" id="category-list">
-            </div>
+            <div class="category-list" id="category-list"></div>
         </div>
-
-        <!-- 答题页面 -->
         <div id="quiz-page" class="page">
             <div class="quiz-header">
                 <button class="back-btn" onclick="goHome()">‹ 返回</button>
@@ -629,8 +623,7 @@ body {
             <div class="question-card">
                 <div class="question-type" id="question-type">单选题</div>
                 <div class="question-text" id="question-text"></div>
-                <div class="options-list" id="options-list">
-                </div>
+                <div class="options-list" id="options-list"></div>
             </div>
             <div class="quiz-actions">
                 <button class="action-btn secondary" id="prev-btn" onclick="prevQuestion()">上一题</button>
@@ -643,8 +636,6 @@ body {
                 <div class="explanation" id="explanation"></div>
             </div>
         </div>
-
-        <!-- 结果页面 -->
         <div id="result-page" class="page">
             <div class="result-header">
                 <h2>练习完成!</h2>
@@ -669,7 +660,6 @@ body {
             </div>
         </div>
     </div>
-
     <script>
 // 阿里云大模型ACP题库
 // 共 553 道题目
