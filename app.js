@@ -290,7 +290,7 @@ function submitAnswer() {
     const resultCard = document.getElementById('result-card');
     const resultIcon = document.getElementById('result-icon');
     const resultText = document.getElementById('result-text');
-    const correctAnswerDiv = document.getElementById('correct-answer');
+    const answerRow = document.getElementById('answer-row');
     const explanation = document.getElementById('explanation');
     
     if (isCorrect) {
@@ -310,10 +310,18 @@ function submitAnswer() {
         }
     }
     
-    // 显示正确答案
+    // 显示正确答案和选择答案
     const optionLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const correctLabels = correctAnswers.map(idx => optionLabels[idx]).join('、');
-    correctAnswerDiv.innerHTML = `<strong>正确答案：</strong><span class="answer-highlight">${correctLabels}</span>`;
+    const selectedLabels = selectedOptions.map(idx => optionLabels[idx]).join('、');
+    answerRow.innerHTML = `
+        <div class="answer-item correct-answer">
+            <strong>正确答案：</strong><span class="answer-highlight">${correctLabels}</span>
+        </div>
+        <div class="answer-item selected-answer">
+            <strong>选择答案：</strong><span class="answer-selected ${isCorrect ? 'correct' : 'wrong'}">${selectedLabels}</span>
+        </div>
+    `;
     
     // 显示解析
     if (question.explanation) {
