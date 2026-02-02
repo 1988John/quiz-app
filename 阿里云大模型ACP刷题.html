@@ -7903,7 +7903,8 @@ function loadProgress() {
         completed: [],      // 已完成的题目ID
         wrong: [],          // 答错的题目ID
         correctCount: 0,    // 总正确数
-        totalAttempts: 0    // 总尝试数
+        totalAttempts: 0,   // 总尝试数
+        lastIndex: 0        // 顺序刷题的位置
     };
 }
 
@@ -7951,9 +7952,22 @@ function startSequential() {
         return;
     }
     currentQuestions = [...questions];
-    currentIndex = 0;
     sessionCorrect = 0;
     sessionWrong = 0;
+    
+    // 检查是否有上次的进度
+    if (progress.lastIndex > 0 && progress.lastIndex < questions.length) {
+        if (confirm(`上次刷到第 ${progress.lastIndex + 1} 题，是否继续？\n\n点击"确定"继续上次进度\n点击"取消"从头开始`)) {
+            currentIndex = progress.lastIndex;
+        } else {
+            currentIndex = 0;
+            progress.lastIndex = 0;
+            saveProgress(progress);
+        }
+    } else {
+        currentIndex = 0;
+    }
+    
     showPage('quiz-page');
     renderQuestion();
 }
@@ -8036,6 +8050,12 @@ function startCategory(category) {
 function renderQuestion() {
     const question = currentQuestions[currentIndex];
     if (!question) return;
+    
+    // 保存顺序刷题位置
+    if (currentQuestions.length === (window.QUESTIONS || []).length) {
+        progress.lastIndex = currentIndex;
+        saveProgress(progress);
+    }
     
     // 更新进度
     document.getElementById('current-index').textContent = currentIndex + 1;
@@ -8247,6 +8267,7 @@ function resetProgress() {
         progress.wrong = [];
         progress.correctCount = 0;
         progress.totalAttempts = 0;
+        progress.lastIndex = 0;
         initHome();
         alert('进度已重置！');
     }
