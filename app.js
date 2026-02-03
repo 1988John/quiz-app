@@ -166,6 +166,12 @@ function renderQuestion() {
     const question = currentQuestions[currentIndex];
     if (!question) return;
     
+    // 滚动到题目卡片位置，确保能看到题目类型和题目内容
+    const questionCard = document.querySelector('.question-card');
+    if (questionCard) {
+        questionCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
     // 保存顺序刷题位置
     if (currentQuestions.length === (window.QUESTIONS || []).length) {
         progress.lastIndex = currentIndex;
