@@ -49,6 +49,14 @@
                     <span class="menu-text">分类练习</span>
                     <span class="menu-arrow">›</span>
                 </button>
+                <button class="menu-item exam-item" onclick="startExam()">
+                    <span class="menu-icon">📝</span>
+                    <span class="menu-text">
+                        模拟考试
+                        <span class="menu-desc">75题 · 100分 · 2小时</span>
+                    </span>
+                    <span class="menu-arrow">›</span>
+                </button>
             </div>
             <button class="reset-btn" onclick="resetProgress()">重置学习进度</button>
         </div>
@@ -122,6 +130,114 @@
             <div class="result-actions">
                 <button class="action-btn primary" onclick="goHome()">返回首页</button>
                 <button class="action-btn secondary" onclick="reviewWrong()">查看错题</button>
+            </div>
+        </div>
+
+        <!-- 模拟考试页面 -->
+        <div id="exam-page" class="page">
+            <div class="exam-header">
+                <button class="back-btn" onclick="confirmExitExam()">‹ 退出</button>
+                <div class="exam-timer" id="exam-timer">
+                    <span class="timer-icon">⏱️</span>
+                    <span class="timer-text" id="timer-text">02:00:00</span>
+                </div>
+                <div class="exam-progress">
+                    <span id="exam-current">1</span>/<span id="exam-total">75</span>
+                </div>
+            </div>
+            <div class="exam-info-bar">
+                <div class="exam-section" id="exam-section">单选题区</div>
+                <div class="exam-score-info">
+                    <span class="single-info">单选50题×1分</span>
+                    <span class="multi-info">多选25题×2分</span>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="exam-progress-fill"></div>
+            </div>
+            <div class="question-card">
+                <div class="question-type" id="exam-question-type">单选题</div>
+                <div class="question-text" id="exam-question-text"></div>
+                <div class="options-list" id="exam-options-list">
+                    <!-- 动态生成选项 -->
+                </div>
+            </div>
+            <div class="exam-nav">
+                <button class="nav-btn" onclick="showExamOverview()">📋 答题卡</button>
+            </div>
+            <div class="quiz-actions">
+                <button class="action-btn secondary" id="exam-prev-btn" onclick="examPrevQuestion()">上一题</button>
+                <button class="action-btn primary" id="exam-save-btn" onclick="examSaveAndNext()">保存并下一题</button>
+                <button class="action-btn secondary" id="exam-next-btn" onclick="examNextQuestion()">下一题</button>
+            </div>
+        </div>
+
+        <!-- 答题卡弹窗 -->
+        <div id="exam-overview-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>答题卡</h3>
+                    <button class="modal-close" onclick="closeExamOverview()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="overview-section">
+                        <h4>单选题（1-50题）</h4>
+                        <div class="overview-grid" id="single-overview-grid">
+                            <!-- 动态生成 -->
+                        </div>
+                    </div>
+                    <div class="overview-section">
+                        <h4>多选题（51-75题）</h4>
+                        <div class="overview-grid" id="multi-overview-grid">
+                            <!-- 动态生成 -->
+                        </div>
+                    </div>
+                    <div class="overview-legend">
+                        <span class="legend-item"><span class="legend-dot answered"></span>已答</span>
+                        <span class="legend-item"><span class="legend-dot unanswered"></span>未答</span>
+                        <span class="legend-item"><span class="legend-dot current"></span>当前</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="action-btn secondary" onclick="closeExamOverview()">继续答题</button>
+                    <button class="action-btn primary submit-exam-btn" onclick="submitExam()">交卷</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 考试结果页面 -->
+        <div id="exam-result-page" class="page">
+            <div class="exam-result-header">
+                <h2 id="exam-result-title">考试结束</h2>
+                <p class="exam-result-subtitle" id="exam-result-subtitle">您的成绩如下</p>
+            </div>
+            <div class="exam-score-card">
+                <div class="score-circle">
+                    <span class="score-number" id="exam-final-score">0</span>
+                    <span class="score-label">分</span>
+                </div>
+                <div class="pass-status" id="pass-status">未通过</div>
+            </div>
+            <div class="exam-detail-stats">
+                <div class="detail-stat">
+                    <span class="detail-label">单选题</span>
+                    <span class="detail-value"><span id="single-correct">0</span>/50</span>
+                    <span class="detail-score"><span id="single-score">0</span>分</span>
+                </div>
+                <div class="detail-stat">
+                    <span class="detail-label">多选题</span>
+                    <span class="detail-value"><span id="multi-correct">0</span>/25</span>
+                    <span class="detail-score"><span id="multi-score">0</span>分</span>
+                </div>
+                <div class="detail-stat">
+                    <span class="detail-label">用时</span>
+                    <span class="detail-value" id="exam-time-used">--</span>
+                    <span class="detail-score"></span>
+                </div>
+            </div>
+            <div class="result-actions">
+                <button class="action-btn primary" onclick="goHome()">返回首页</button>
+                <button class="action-btn secondary" onclick="reviewExamWrong()">查看错题</button>
             </div>
         </div>
     </div>
