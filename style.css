@@ -264,12 +264,19 @@ body {
 
 .question-type {
     display: inline-block;
-    background: var(--primary-color);
     color: white;
     font-size: 12px;
     padding: 4px 12px;
     border-radius: 20px;
     margin-bottom: 16px;
+}
+
+.question-type.single {
+    background: var(--primary-color);
+}
+
+.question-type.multiple {
+    background: #f59e0b;
 }
 
 .question-text {

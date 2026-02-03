@@ -186,8 +186,10 @@ function renderQuestion() {
     document.getElementById('progress-fill').style.width = progressPercent + '%';
     
     // 显示题目类型
+    const typeElement = document.getElementById('question-type');
     const typeText = question.type === 'multiple' ? '多选题' : '单选题';
-    document.getElementById('question-type').textContent = typeText;
+    typeElement.textContent = typeText;
+    typeElement.className = 'question-type ' + question.type;
     
     // 显示题目内容（带题号）
     document.getElementById('question-text').textContent = (currentIndex + 1) + '. ' + question.question;

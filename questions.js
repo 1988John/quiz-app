@@ -1,12 +1,21 @@
 // 阿里云大模型ACP题库
 // 共 553 道题目
 // 生成时间: 2026-02-03
+// 分类说明：
+// - RAG检索增强：检索增强生成、文档处理、向量化、知识库等
+// - 提示词工程：提示词设计、CoT思维链、Few-shot等
+// - Agent智能体：智能体设计、工具调用、多智能体协作等
+// - 模型微调：微调训练、参数调优、损失函数等
+// - 大模型基础：Token、API调用、推理参数等
+// - 安全与合规：内容安全、合规要求、幻觉防范等
+// - 评测与优化：模型评测、性能优化等
+// - 多模态应用：图像、语音、视频等多模态处理
 
 window.QUESTIONS = [
     {
         "id": 1,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "以下哪三种场景更需要防范AI模型“幻觉”的风险？",
         "options": [
             "医疗诊断报告生成系统",
@@ -24,7 +33,7 @@ window.QUESTIONS = [
     {
         "id": 2,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "一家数字营销公司希望利用多智能体来生成广告文案、安排社交媒体发布和追踪推广效果。其中'Creative Agent'输出文案，'Scheduler Agent'发送帖子，'Analytics Agent'统计指标。下列哪些是设计这些Agent时的合适做法？",
         "options": [
             "为每个Agent定义明确职责",
@@ -41,7 +50,7 @@ window.QUESTIONS = [
     {
         "id": 3,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "某团队计划为法律咨询场景微调一个大模型。在正式启动微调前，团队需优先评估以下哪三点？",
         "options": [
             "通过设计专业法律术语提示词优化输出结果",
@@ -59,7 +68,7 @@ window.QUESTIONS = [
     {
         "id": 4,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你要给多个未归档的 Keynote 文档创建索引，这些文档中包括表格、流程图等复杂内容。在“文档解析”环节，你可以怎么做？",
         "options": [
             "开发能解析 Keynote 的自定义 Reader",
@@ -76,7 +85,7 @@ window.QUESTIONS = [
     {
         "id": 5,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "某公司正在开发一款智能客服系统，用于为用户提供多语言支持。在处理用户问题时，系统需要准确翻译并解释一些内部非公开的领域术语。为了确保翻译和解释的高准确性，以下哪两个方案能有效解决这一问题？",
         "options": [
             "手动整理所有术语及其翻译，并作为提示词提供给模型",
@@ -93,7 +102,7 @@ window.QUESTIONS = [
     {
         "id": 6,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "关于大模型的工作流程，以下哪三个描述是正确的？",
         "options": [
             "输入文本需要先分词化为 Token",
@@ -111,7 +120,7 @@ window.QUESTIONS = [
     {
         "id": 7,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "模型微调最适合以下解决哪种问题？",
         "options": [
             "需要实时检索最新互联网信息的任务",
@@ -124,7 +133,7 @@ window.QUESTIONS = [
     {
         "id": 8,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "下面是qwen2.5-1.5b 微调训练过程中的损失趋势图，当前的状态是？",
         "options": [
             "欠拟合",
@@ -137,7 +146,7 @@ window.QUESTIONS = [
     {
         "id": 9,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "你是某金融APP的智能投顾系统负责人，发现用户存在恶意咨询的情况，如涉及“内幕消息”等敏感词。为了在检测到敏感词时立即返回固定话术，以下哪种方案最能满足需求？",
         "options": [
             "在生成回答后追加合规性二次审核",
@@ -150,7 +159,7 @@ window.QUESTIONS = [
     {
         "id": 10,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "你开发智能会议助手时遇到技术选型问题，“需要将会议录音转换为文字记录，并自动生成带有重点标注的摘要，最后将摘要内容转换为语音播报”。以下技术组合中最合理的是？",
         "options": [
             "cosyvoice->v1语音合成->Qwen-VL视频理解->ComfyUI文生图",
@@ -163,7 +172,7 @@ window.QUESTIONS = [
     {
         "id": 11,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "你在开发一个可以自动回答客户问题的客服平台。除了回答产品知识问题外，你希望它还能执行与账户相关的操作（例如实时查询用户订单状态、修改账户绑定的手机号、提交工单或退款申请）。你应该考虑引入什么技术来扩展大模型的能力？",
         "options": [
             "RAG （Retrieval Augmented Generation）",
@@ -176,7 +185,7 @@ window.QUESTIONS = [
     {
         "id": 12,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在测试RAG应用性能时，你发现检索阶段总是出现不太相关的段落。为了提高检索准确度，你应该怎么做？",
         "options": [
             "尝试增加大模型重复惩罚系数，避免召回不相关内容",
@@ -189,7 +198,7 @@ window.QUESTIONS = [
     {
         "id": 13,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你在优化 RAG应用时，检索条件改得非常宽松，相似度很低的文本段也可以被召回。这可能会导致出现以下哪种情况",
         "options": [
             "Context Recall（文本段召回率）变高",
@@ -202,7 +211,7 @@ window.QUESTIONS = [
     {
         "id": 14,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你将 PDF文档转成普通文本后，RAG 的检索质量变差。下列哪种做法最能提升检索准确度？",
         "options": [
             "将文本转成更结构清晰的 Markdown",
@@ -215,7 +224,7 @@ window.QUESTIONS = [
     {
         "id": 15,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你在开发一个基于RAG的智能客服系统，用于回答用户关于产品功能的技术问题。为了提升回答的准确性，你调整了检索模块的相似度阈值，从默认的0.7提高到了0.95。然而，测试后发现，部分用户的提问得不到满意的回答。可能的原因是什么？",
         "options": [
             "检索模块的计算复杂度增加，导致大模型推理速度变慢",
@@ -228,7 +237,7 @@ window.QUESTIONS = [
     {
         "id": 16,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "你为教育公司搭建了RAG问答系统，且知识库存储了各部门的机密数据（如财务部的薪资表、教务部的未公开课件）。为了确保普通员工只能访问自己有权限的数据，以下哪种做法最合适？",
         "options": [
             "预处理用户问题时强制添加”请仅回答我部门数据\"的提示词",
@@ -241,7 +250,7 @@ window.QUESTIONS = [
     {
         "id": 17,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "某 RAG 系统回答“张伟是哪个部门的”时，总是只检索到一个无关切片，导致答案不准确。为改进检索效果，下列哪种做法有助于改善这个问题？",
         "options": [
             "换用更大参数量的大模型",
@@ -254,7 +263,7 @@ window.QUESTIONS = [
     {
         "id": 18,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你所在的医院技术部正在翻译一份医学影像技术手册，包含上千条内部非公开的专业术语与缩写。如果想在翻译时保证准确性，并减少对大量示例的依赖，以下哪种做法更合适？",
         "options": [
             "仅提供少量缩写翻译示例。如“MRI —>磁共振成像”，“CT —>计算机断层扫描”，让大模型依照模仿。",
@@ -267,7 +276,7 @@ window.QUESTIONS = [
     {
         "id": 19,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "假设你正在使用大模型解决以下数学问题：“小明每天存入银行10元钱，但每周末（周六和周日）会取出20元用于消费。如果小明从某周一（第一天）开始存钱，青问小明需要多少天才能存够100元？”为了提升大模型解答此类问题的准确率，以下哪种提示方法最能有效引导大模型生成正确的答案？",
         "options": [
             "提供少量样例",
@@ -280,7 +289,7 @@ window.QUESTIONS = [
     {
         "id": 20,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "分词（Tokenization）的主要作用是什么？",
         "options": [
             "将文本转换为固定长度的向量",
@@ -293,7 +302,7 @@ window.QUESTIONS = [
     {
         "id": 21,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "你开发了一个聊天机器人，用户反馈每次提问后总是要等很久才能看到回复，你应该怎么做？",
         "options": [
             "在生成间隙通过前端界面展示动画，减少用户等待的疲惫感",
@@ -307,7 +316,7 @@ window.QUESTIONS = [
     {
         "id": 22,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大模型如何判断什么时候应该停止输出？",
         "options": [
             "需要用户手动打断",
@@ -320,7 +329,7 @@ window.QUESTIONS = [
     {
         "id": 23,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "公司新发了《远程办公规定》，你想让现有答疑机器人掌握这份规定的内容。基于已经搭建好的RAG应用，你应该怎么做？",
         "options": [
             "将新文档分块后更新向量数据库",
@@ -333,7 +342,7 @@ window.QUESTIONS = [
     {
         "id": 24,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你准备为企业内部人事系统搭建一个多轮问答功能，现有历史对话：“张三的办公楼在哪？”，“在A栋一楼”，“他的主管是谁？”。你应该怎么设计检索步骤？",
         "options": [
             "对\"主管”进行同义词扩展，包含“领导”、“上级\"等，提高召回率",
@@ -346,7 +355,7 @@ window.QUESTIONS = [
     {
         "id": 25,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大模型在处理输入文本时，第一步通常执行的操作是？",
         "options": [
             "Token向量化",
@@ -359,7 +368,7 @@ window.QUESTIONS = [
     {
         "id": 26,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "你在调用通义干问 API 时设置了 temperature（温度）参数，以下哪种说法是正确的？",
         "options": [
             "温度参数越高，候选 Token的概率值会越接近，从而带来更高的随机性",
@@ -372,7 +381,7 @@ window.QUESTIONS = [
     {
         "id": 27,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在为多轮对话场景设计的RAG应用中，大模型参与了什么步骤？",
         "options": [
             "只有生成步骤",
@@ -385,7 +394,7 @@ window.QUESTIONS = [
     {
         "id": 28,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "你在为一个创意写作工具调整大模型生成内容，以下哪个参数可以用来控制生成内容的多样性？",
         "options": [
             "temperature",
@@ -398,7 +407,7 @@ window.QUESTIONS = [
     {
         "id": 29,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "你需要借助大模型为小学生写一篇关于“保护环境”的科普短文，但输出的内容过于学术化（如频繁使用“碳达峰“生物降解\"等术语）。以下哪个提示词优化方向最能直接解决该问题？",
         "options": [
             "补充任务目标：要求文章包含“垃圾分类对社区的影响”案例",
@@ -411,7 +420,7 @@ window.QUESTIONS = [
     {
         "id": 30,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "你在优化一个多语言翻译系统，发现文学翻译经常“失去原文意境”，而技术文档翻译经常“用词生硬、难以理解”。现有提示词已包含“保持专业性“和”语言流畅”要求，并添加了示例。下一步最应优先尝试的策略是？",
         "options": [
             "要求模型分两次翻译：先直译再人工润色",
@@ -425,7 +434,7 @@ window.QUESTIONS = [
     {
         "id": 31,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "你正在使用 Qwen-Plus 生成商品介绍文档，完整的提示词是“请帮我生成我们公司最新智能手表的产品介绍”。但你发现生成的内容是介绍其他公司的产品。以下策略中，应首先尝试的是？",
         "options": [
             "调低温度参数（Temperature）以降低随机性",
@@ -438,7 +447,7 @@ window.QUESTIONS = [
     {
         "id": 32,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "你正在尝试使用大模型 Qwen-72B 完成一个用户反馈分类任务，但效果不佳。以下选项中，你应首先考虑的策略是？",
         "options": [
             "微调大模型（Fine-tuning）",
@@ -451,7 +460,7 @@ window.QUESTIONS = [
     {
         "id": 33,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "你需要大模型对用户输入的新闻内容进行分类（体育/经济/娱乐三种）。为提升准确性且便于程序解析，以下哪个提示词更合理？",
         "options": [
             "请根据下面提供的内容判断其类别（体育/经济/娛乐），只输出判断结果。内容是：…",
@@ -464,7 +473,7 @@ window.QUESTIONS = [
     {
         "id": 34,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "你是某公司IT部门主管，想使用大模型生成符合公司内部编码规范的Java代码模板，请问以下哪个提示词更合适？",
         "options": [
             "请帮我生成一份java 代码，用于⋯",
@@ -477,7 +486,7 @@ window.QUESTIONS = [
     {
         "id": 35,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你开发了一个 RAG 应用，发现其在回答内部流程问题（如“报销系统登录方式”）时准确率高，但回答通识性问题（如“如何修复Excel公式错误”）时质量差。应该优先尝试以下哪个改进方案？",
         "options": [
             "禁用RAG，所有问题依赖大模型回答",
@@ -490,7 +499,7 @@ window.QUESTIONS = [
     {
         "id": 36,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "你希望大模型客服在处理模糊请求时（如用户说“我想订票”），能主动追问必要信息（如时间、地点）。以下哪种提示词设计最有效？",
         "options": [
             "你是一个细心的订票客服人员。注意每次回复后必须追加一个问题，例如请问需要补充什么信息？",
@@ -503,7 +512,7 @@ window.QUESTIONS = [
     {
         "id": 37,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "某企业开发了一款面向医疗领域的 RAG 应用，用户反馈称生成的诊断建议经常不准确，且回答内容缺乏针对性。经过初步分析，发现检索模块召回的相关文档质量较低，同时生成模块对复杂医学术语的理解能力不足。作为开发者，你认为以下哪种优化策略最有效？",
         "options": [
             "针对每个用户的反馈逐一调整生成结果，确保满足个性化需求",
@@ -516,7 +525,7 @@ window.QUESTIONS = [
     {
         "id": 38,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "某律所在优化法律问答机器人应用时发现它总是无法准确回答交通法的内容，应优先？",
         "options": [
             "在大模型提示词中强调要准确回答交通法内容",
@@ -529,7 +538,7 @@ window.QUESTIONS = [
     {
         "id": 39,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你开发了一个RAG应用，用户反馈说回复效果不佳。你通过后台日志发现用户的输入有时缺少信息，如“教研部”、“请假”，你应该优先进行哪方面的优化？",
         "options": [
             "更换检素速度更快的向量数据库",
@@ -542,7 +551,7 @@ window.QUESTIONS = [
     {
         "id": 40,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "RAG 未检索到相关信息，但模型仍编造回答。下列哪种做法有助于减少这种幻觉？",
         "options": [
             "把所有文档一次性放进模型上下文",
@@ -555,7 +564,7 @@ window.QUESTIONS = [
     {
         "id": 41,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，若知识库内容充足但精确率低，以下哪种方法是合理的？",
         "options": [
             "降低相似度阈值",
@@ -568,7 +577,7 @@ window.QUESTIONS = [
     {
         "id": 42,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "测试时发现，RAG 应用的答案中仍包含大量无用细节，导致阅读困难。哪种做法可以最直接地减少无关细节？",
         "options": [
             "在检索后用 ReRank 且设置更小的 Top N",
@@ -581,7 +590,7 @@ window.QUESTIONS = [
     {
         "id": 43,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "你开发了一个专用于医疗场景问答的RAG应用，为了找到优化方向，需要对其进行评测。以下哪个是参与评测必不可少的群体？",
         "options": [
             "算法工程师。只有算法工程师才可以更理解 RAG 应用的设计过程与细节。",
@@ -594,7 +603,7 @@ window.QUESTIONS = [
     {
         "id": 44,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，若知识库内容充足但召回率低，以下哪种方法是合理的？",
         "options": [
             "更換embedding模型",
@@ -607,7 +616,7 @@ window.QUESTIONS = [
     {
         "id": 45,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "向量检索召回了10条切片，但部分切片与问题相关度很低，干扰了大模型答案。哪种方式能更好地过滤掉低相关度切片？",
         "options": [
             "使用高温度的模型进行生成",
@@ -620,7 +629,7 @@ window.QUESTIONS = [
     {
         "id": 46,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在 qwen2.5-1.5b 模型微调时，训练损失快速震荡甚至开始上升，说明模型当前处于？",
         "options": [
             "欠拟合",
@@ -633,7 +642,7 @@ window.QUESTIONS = [
     {
         "id": 47,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "开发医疗问答系统时发现模型频繁产生”幻觉”，应优先采取哪种优化组合？",
         "options": [
             "降低LoRA秩值＋ 增大学习率",
@@ -646,7 +655,7 @@ window.QUESTIONS = [
     {
         "id": 48,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "为什么我们要在微调中使用早停法？",
         "options": [
             "微调轮次过少可能导致模型欠拟合",
@@ -659,7 +668,7 @@ window.QUESTIONS = [
     {
         "id": 49,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在 qwen2.5-1.5b 模型微调时，训练损失和验证损失在同时快速下降，以下说法正确的是？",
         "options": [
             "说明训练策略有效，应继续训练",
@@ -672,7 +681,7 @@ window.QUESTIONS = [
     {
         "id": 50,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "梯度下降算法中，如果学习率设置过大可能导致：",
         "options": [
             "在最优解附近震荡",
@@ -685,7 +694,7 @@ window.QUESTIONS = [
     {
         "id": 51,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪项是流式输出的主要优势？",
         "options": [
             "减少服务器计算资源消耗",
@@ -698,7 +707,7 @@ window.QUESTIONS = [
     {
         "id": 52,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "某创业公司开发的“Al法律助手”应用，能自动生成合同条款与诉讼风险评估报告。在正式上线应用商店前，必须完成的最关键合规步骤是哪个？",
         "options": [
             "通过国家网信部门的大模型算法备案",
@@ -711,7 +720,7 @@ window.QUESTIONS = [
     {
         "id": 53,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "你在开发一个内部IT 系统，希望能够自动处理员工的请求：“我的投影仪故障了，请安排维修并通知下午会议改线上”。以下哪种技术方案有效、且能尽量減少人力投入？",
         "options": [
             "通过大模型判断接单人，自动将任务指派给接单人，通知其创建维修工单并调整会议。",
@@ -724,7 +733,7 @@ window.QUESTIONS = [
     {
         "id": 54,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在开发智能餐厅点餐助手时，测试发现用户语音下单（如“来一份宫保鸡丁，数量两份”）时系统生成错误的调用参数，导致订单出错。经排查，原因在于“下单工具“描述中末明确规定输入参数（如\"菜品名称”和“数量”）的类型、属性及必选项。请问哪项改进最能提高调用参数的准确性？",
         "options": [
             "在工具描述中详细定义parameters字段，明确说明相关参数的类型、属性描述及必选要求",
@@ -737,7 +746,7 @@ window.QUESTIONS = [
     {
         "id": 55,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "某大学为学生提供一款问答机器人，能回答课程安排和考试时间。学校想新增\"自助预定自习室功能，需要查询并预定教室资源。要使这个功能能与现有问答无缝集成，合适的做法是什么？",
         "options": [
             "在Prompt中写死可预约教室列表",
@@ -750,7 +759,7 @@ window.QUESTIONS = [
     {
         "id": 56,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "把API Key配置到环境变量里有哪些优点？",
         "options": [
             "提高大模型的回复速度",
@@ -767,7 +776,7 @@ window.QUESTIONS = [
     {
         "id": 57,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你在构建一个RAG应用，以下哪些提示词模板是合理的的？",
         "options": [
             "检索到的相关内容为：｛检索到的文本段｝ 用户的问题是：｛用户问题｝ 请结合以上信息，给出准确且简洁的回答。",
@@ -784,7 +793,7 @@ window.QUESTIONS = [
     {
         "id": 58,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你开发了一个公司制度文件的RAG问答机器人。在测试时你发现提问“公司几点上班”，召回的文本段包含公司福利等信息，作息信息由于排名靠后而没有被召回。以下哪两个措施更有助于解决这一问题？",
         "options": [
             "使用重排 （rerank）技术",
@@ -801,7 +810,7 @@ window.QUESTIONS = [
     {
         "id": 59,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "对于 RAG 应用的理解，以下那两项描述是正确的？",
         "options": [
             "RAG 的“A”（Augmented，增强），是通过提示词来实时训练模型，达到增强模型的效果",
@@ -818,7 +827,7 @@ window.QUESTIONS = [
     {
         "id": 60,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "你写了一个提示词“请用适合简报的形式，以每篇100字的篇幅总结今早的十大新闻”，你希望大模型能按照提示词完成任务，以下哪些方案可行？",
         "options": [
             "整理历史新闻库，构建一个 RAG 应用，让大模型回答时参考知识库中的新闻",
@@ -835,7 +844,7 @@ window.QUESTIONS = [
     {
         "id": 61,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "某电商公司需开发一个客服机器人处理“退换货政策咨询“和”商品推荐”\"任务。下列哪两种角色应深度参与提示词设计？",
         "options": [
             "前端开发工程师（负责对话界面实现）",
@@ -852,7 +861,7 @@ window.QUESTIONS = [
     {
         "id": 62,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "你通过RAG为用户提供商品推荐服务。用户反馈说，在搜索“包子”时，推荐结果中经常出现”书包”的商品信息。后台分析发现，召回阶段确实会夹杂部分无关商品的信息。以下哪些措施能够有效提升该系统的推荐效果？",
         "options": [
             "降低检索阶段的相似度阈值",
@@ -869,7 +878,7 @@ window.QUESTIONS = [
     {
         "id": 63,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你发现检索到的切片里常常遗漏上下文，导致回答片段化。下列哪些是有效且合理的改进措施？",
         "options": [
             "改用“句子窗口切片”或“滑动窗口检索”",
@@ -887,7 +896,7 @@ window.QUESTIONS = [
     {
         "id": 64,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在评测机制里，你发现自动化评分一直偏高，但实际用户反馈一般。以下哪三项有可能提高评测的可信度？",
         "options": [
             "调整自动化评测工程的提示词及阈值，让其更接近真实用户判断标注",
@@ -905,7 +914,7 @@ window.QUESTIONS = [
     {
         "id": 65,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "构建高质量的数学题微调数据集应包含哪些要素？",
         "options": [
             "大量的数学题解题数据",
@@ -924,7 +933,7 @@ window.QUESTIONS = [
     {
         "id": 66,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下哪两个参数的设置会影响训练时显存占用峰值的大小？",
         "options": [
             "批量大小（batch_size）",
@@ -941,7 +950,7 @@ window.QUESTIONS = [
     {
         "id": 67,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "关于Loss function & Cost function，下面描述正确的是？",
         "options": [
             "用于度量当前所设置的参数是否合适",
@@ -958,7 +967,7 @@ window.QUESTIONS = [
     {
         "id": 68,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "某教育类AI产品出现以下现象，哪些属于“幻觉”风险？",
         "options": [
             "回答“泰坦尼克号唯一幸存者”时虚构人物",
@@ -975,7 +984,7 @@ window.QUESTIONS = [
     {
         "id": 69,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "为了尽量减少大模型应用的幻觉，以下哪些措施是有效的？",
         "options": [
             "在提示词中要求禁止虛构内容、遇到无法回答的问题可以直接回复不知道",
@@ -993,7 +1002,7 @@ window.QUESTIONS = [
     {
         "id": 70,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "某游戏平台上线了一个辅助聊天机器人，可帮助玩家完成游戏内交易、提交客服工单，以及获取实时游戏分析。有玩家发现机器人时常在简单客服请求时错误调用'analytics'工具。为改进这个多智能体系统的工具使用准确性，应该怎么做？",
         "options": [
             "在Agent指令中进一步明确各Agent的功能边界",
@@ -1010,7 +1019,7 @@ window.QUESTIONS = [
     {
         "id": 71,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "RAG（Retrieval Augmented Generation）的主要目的是什么？",
         "options": [
             "增加模型的训练数据",
@@ -1023,7 +1032,7 @@ window.QUESTIONS = [
     {
         "id": 72,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context recall 指标时，以下哪种方法可以提升召回的准确率？",
         "options": [
             "使用大模型改写 query",
@@ -1036,7 +1045,7 @@ window.QUESTIONS = [
     {
         "id": 73,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，temperature=0.1的作用是什么？",
         "options": [
             "使输出更具确定性",
@@ -1049,7 +1058,7 @@ window.QUESTIONS = [
     {
         "id": 74,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种模型用于将文本转换为高维向量？",
         "options": [
             "Embedding 模型",
@@ -1062,7 +1071,7 @@ window.QUESTIONS = [
     {
         "id": 75,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在LlamaIndex的默认提示词模板中，context_str表示什么？",
         "options": [
             "从向量库中检索到的上下文信息",
@@ -1075,7 +1084,7 @@ window.QUESTIONS = [
     {
         "id": 76,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，model=\"qwen-plus\"的作用是什么？",
         "options": [
             "指定使用的模型",
@@ -1088,7 +1097,7 @@ window.QUESTIONS = [
     {
         "id": 77,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "如果 answer correctness 指标得分较低，而 context recall 和 context precision 得分较高，以下哪种优化措施是可行的？",
         "options": [
             "优化 prompt",
@@ -1101,7 +1110,7 @@ window.QUESTIONS = [
     {
         "id": 78,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在控制大模型生成内容的随机性时，top_p参数的作用是什么？",
         "options": [
             "调整候选Token的概率分布",
@@ -1114,7 +1123,7 @@ window.QUESTIONS = [
     {
         "id": 79,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在自定义提示词模板中，以下哪项是用于约束大模型行为的注意事项？",
         "options": [
             "根据上下文信息而非先验知识来回答问题",
@@ -1127,7 +1136,7 @@ window.QUESTIONS = [
     {
         "id": 80,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，提示词明确的任务需求是什么？",
         "options": [
             "对文本进行扩写和润色",
@@ -1140,7 +1149,7 @@ window.QUESTIONS = [
     {
         "id": 81,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种 Embedding 模型是更新的版本？",
         "options": [
             "text-embedding-v3",
@@ -1153,7 +1162,7 @@ window.QUESTIONS = [
     {
         "id": 82,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 answer correctness 指标时，以下哪些是优化 prompt 的好处？",
         "options": [
             "提升生成答案的准确度",
@@ -1166,7 +1175,7 @@ window.QUESTIONS = [
     {
         "id": 83,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法结合用户信息、行为等数据扩写问题？",
         "options": [
             "基于用户画像扩展上下文",
@@ -1179,7 +1188,7 @@ window.QUESTIONS = [
     {
         "id": 84,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，query_engine = index.as_query_engine(...)的作用是什么？",
         "options": [
             "创建查询引擎",
@@ -1192,7 +1201,7 @@ window.QUESTIONS = [
     {
         "id": 85,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的检索与生成阶段，主要步骤是什么？",
         "options": [
             "从索引中检索相关的文档片段并与提问一起输入到大模型",
@@ -1205,7 +1214,7 @@ window.QUESTIONS = [
     {
         "id": 86,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化后的答疑机器人中，以下哪些是提示词中规定的输入格式？",
         "options": [
             "【输入如下】",
@@ -1218,7 +1227,7 @@ window.QUESTIONS = [
     {
         "id": 87,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法通过反问用户获取更多信息？",
         "options": [
             "反问用户",
@@ -1231,7 +1240,7 @@ window.QUESTIONS = [
     {
         "id": 88,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法适合处理逻辑性强、内容专业的文档？",
         "options": [
             "语义切片",
@@ -1244,7 +1253,7 @@ window.QUESTIONS = [
     {
         "id": 89,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在需要生成明确答案的场景中，建议如何设置temperature参数？",
         "options": [
             "设置较高的温度值",
@@ -1257,7 +1266,7 @@ window.QUESTIONS = [
     {
         "id": 90,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 Ragas 中，context recall 指标的主要作用是什么？",
         "options": [
             "评估 RA应用在检索阶段的表现",
@@ -1270,7 +1279,7 @@ window.QUESTIONS = [
     {
         "id": 91,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在示例中，以下哪些任务需要经过RAG链路来生成答案？",
         "options": [
             "内部知识查询",
@@ -1283,7 +1292,7 @@ window.QUESTIONS = [
     {
         "id": 92,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在优化 answer correctness 指标时，以下哪种方法可以提升生成答案的准确度？",
         "options": [
             "调整大模型生成的超参数（如 temperatur",
@@ -1296,7 +1305,7 @@ window.QUESTIONS = [
     {
         "id": 93,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于计算向量之间的相似度？",
         "options": [
             "余弦相似度",
@@ -1309,7 +1318,7 @@ window.QUESTIONS = [
     {
         "id": 94,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案适合生产环境？",
         "options": [
             "云服务向量存储",
@@ -1322,7 +1331,7 @@ window.QUESTIONS = [
     {
         "id": 95,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法提取标签用于后续标签过滤+向量相似度检索？",
         "options": [
             "提取标签",
@@ -1335,7 +1344,7 @@ window.QUESTIONS = [
     {
         "id": 96,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context precision 指标时，以下哪些是 rerank（重排序）的好处？",
         "options": [
             "提升相关文本段的排名",
@@ -1348,7 +1357,7 @@ window.QUESTIONS = [
     {
         "id": 97,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，extract_tags函数的作用是什么？",
         "options": [
             "从文本中提取标签",
@@ -1361,7 +1370,7 @@ window.QUESTIONS = [
     {
         "id": 98,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于定义要测试的 Embedding 模型？",
         "options": [
             "embedding_models 字典",
@@ -1374,7 +1383,7 @@ window.QUESTIONS = [
     {
         "id": 99,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于比较不同 Embedding 模型的文本相似度？",
         "options": [
             "compare_embeddings 函数",
@@ -1387,7 +1396,7 @@ window.QUESTIONS = [
     {
         "id": 100,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的以下哪些指标用于评估生成答案与检索资料的事实一致性？",
         "options": [
             "Faithfulness",
@@ -1400,7 +1409,7 @@ window.QUESTIONS = [
     {
         "id": 101,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在私有知识问答场景中，直接传入私域知识相关的参考信息的缺点是什么？",
         "options": [
             "模型处理效率降低",
@@ -1413,7 +1422,7 @@ window.QUESTIONS = [
     {
         "id": 102,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪些方法通过生成假想文档来增强检索效果？",
         "options": [
             "用假设文档来增强检索（HyDE）",
@@ -1426,7 +1435,7 @@ window.QUESTIONS = [
     {
         "id": 103,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的建立索引阶段，文本向量化的主要作用是什么？",
         "options": [
             "增加模型的训练数据",
@@ -1439,7 +1448,7 @@ window.QUESTIONS = [
     {
         "id": 104,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪种方法可以提升文档的层次分明性？",
         "options": [
             "使用 Markdown 格式",
@@ -1452,7 +1461,7 @@ window.QUESTIONS = [
     {
         "id": 105,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 embedding_models 字典的作用？",
         "options": [
             "定义要测试的 Embedding 模型",
@@ -1465,7 +1474,7 @@ window.QUESTIONS = [
     {
         "id": 106,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 compare_embeddings 函数的作用？",
         "options": [
             "比较不同 Embeddin模型的文本相似度",
@@ -1478,7 +1487,7 @@ window.QUESTIONS = [
     {
         "id": 107,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，Dataset.from_dict(data_samples) 的主要作用是什么？",
         "options": [
             "将字典数据转换为数据集",
@@ -1491,7 +1500,7 @@ window.QUESTIONS = [
     {
         "id": 108,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，custom_chat_history的主要作用是什么？",
         "options": [
             "存储历史对话信息",
@@ -1504,7 +1513,7 @@ window.QUESTIONS = [
     {
         "id": 109,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用中，存储索引的主要目的是什么？",
         "options": [
             "提高检索速度",
@@ -1517,7 +1526,7 @@ window.QUESTIONS = [
     {
         "id": 110,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中规定输出格式的主要作用是什么？",
         "options": [
             "确保大模型输出结构化的数据",
@@ -1530,7 +1539,7 @@ window.QUESTIONS = [
     {
         "id": 111,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大模型的问答工作流程中，哪个阶段会循环生成候选Token直到输出结束标记？",
         "options": [
             "输入文本分词化",
@@ -1543,7 +1552,7 @@ window.QUESTIONS = [
     {
         "id": 112,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种 Embedding 模型是 OpenAI 提供的？",
         "options": [
             "text-embedding-3-small",
@@ -1556,7 +1565,7 @@ window.QUESTIONS = [
     {
         "id": 113,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪些切片方法适合刚开始接触 RAG 的用户？",
         "options": [
             "句子切片",
@@ -1569,7 +1578,7 @@ window.QUESTIONS = [
     {
         "id": 114,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，COT方法如何帮助大模型计算总差旅费用？",
         "options": [
             "将问题分解为子问题并逐步推导",
@@ -1582,7 +1591,7 @@ window.QUESTIONS = [
     {
         "id": 115,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法会包含周围的句子作为上下文窗口？",
         "options": [
             "句子窗口切片",
@@ -1595,7 +1604,7 @@ window.QUESTIONS = [
     {
         "id": 116,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪种方法用于在检索前还原用户真实意图？",
         "options": [
             "问题改写",
@@ -1608,7 +1617,7 @@ window.QUESTIONS = [
     {
         "id": 117,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案适合开发测试？",
         "options": [
             "内存向量存储",
@@ -1621,7 +1630,7 @@ window.QUESTIONS = [
     {
         "id": 118,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，业界常用的解决方法是什么？",
         "options": [
             "增加模型的训练数据",
@@ -1634,7 +1643,7 @@ window.QUESTIONS = [
     {
         "id": 119,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪些是本地向量数据库的特点？",
         "options": [
             "适合小规模应用",
@@ -1647,7 +1656,7 @@ window.QUESTIONS = [
     {
         "id": 120,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，以下哪种任务可以直接输入给大模型生成答案？",
         "options": [
             "文档审查",
@@ -1660,7 +1669,7 @@ window.QUESTIONS = [
     {
         "id": 121,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下代码片段的作用是什么？os.environ [\"OPENAI_API_KEY\"]=\"your-api-key-here\"",
         "options": [
             "从磁盘加载 API 密钥。",
@@ -1673,7 +1682,7 @@ window.QUESTIONS = [
     {
         "id": 122,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪个指标用于衡量 answer 与 ground_truth 在事实描述上的差异？",
         "options": [
             "事实准确度",
@@ -1686,7 +1695,7 @@ window.QUESTIONS = [
     {
         "id": 123,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 RAG 工作流程中，以下哪个阶段涉及将文档切片向量化并存储到向量数据库中？",
         "options": [
             "切片向量化与存储阶段",
@@ -1699,7 +1708,7 @@ window.QUESTIONS = [
     {
         "id": 124,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案兼容开源 Milvus？",
         "options": [
             "向量检索服务 Milvus 版",
@@ -1712,7 +1721,7 @@ window.QUESTIONS = [
     {
         "id": 125,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在以下代码片段中，response_format={\"type\": \"json_object\"}的作用是什么？",
         "options": [
             "指定返回的标签格式为JSON",
@@ -1725,7 +1734,7 @@ window.QUESTIONS = [
     {
         "id": 126,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档解析与切片阶段，以下哪种情况会影响大模型的回答效果？",
         "options": [
             "文档切片缺少关键信息",
@@ -1738,7 +1747,7 @@ window.QUESTIONS = [
     {
         "id": 127,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在ask_llm_route函数中，如果问题类型是“文档审查”，会使用哪个提示词？",
         "options": [
             "reviewed_prompt",
@@ -1751,7 +1760,7 @@ window.QUESTIONS = [
     {
         "id": 128,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 RAG 应用中进行多轮对话，应该如何进行检索？",
         "options": [
             "在检索阶段输入完整的历史对话信息",
@@ -1764,7 +1773,7 @@ window.QUESTIONS = [
     {
         "id": 129,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，受众（Audience）的主要作用是什么？",
         "options": [
             "明确大模型针对的特定受众",
@@ -1777,7 +1786,7 @@ window.QUESTIONS = [
     {
         "id": 130,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，任务目标（Object）的主要作用是什么？",
         "options": [
             "明确要求大模型完成的具体任务",
@@ -1790,7 +1799,7 @@ window.QUESTIONS = [
     {
         "id": 131,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，CondenseQuestionChatEngine的主要作用是什么？",
         "options": [
             "将用户问题改写为包含历史对话关键信息的新query",
@@ -1803,7 +1812,7 @@ window.QUESTIONS = [
     {
         "id": 132,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，response = ask(\"张伟是哪个部门的\", query_engine=query_engine)的作用是什么？",
         "options": [
             "使用查询引擎获取问题的答案",
@@ -1816,7 +1825,7 @@ window.QUESTIONS = [
     {
         "id": 133,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在构建有效的提示词时，清晰表达需求的主要作用是什么？",
         "options": [
             "确保大模型生成的内容与任务高度相关",
@@ -1829,7 +1838,7 @@ window.QUESTIONS = [
     {
         "id": 134,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，query_engine的主要作用是什么？",
         "options": [
             "创建用于提问的引擎",
@@ -1842,7 +1851,7 @@ window.QUESTIONS = [
     {
         "id": 135,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "检索增强式生成（RAG）应用的主要优势是什么？",
         "options": [
             "避免传入大量背景信息",
@@ -1855,7 +1864,7 @@ window.QUESTIONS = [
     {
         "id": 136,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在top_p=0.5的设置下，大模型的输出会有什么特点？",
         "options": [
             "输出内容非常多样化",
@@ -1868,7 +1877,7 @@ window.QUESTIONS = [
     {
         "id": 137,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在意图识别中，以下哪种方法不需要修改模型本身的参数？",
         "options": [
             "使用提示词",
@@ -1881,7 +1890,7 @@ window.QUESTIONS = [
     {
         "id": 138,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于执行比较？",
         "options": [
             "compare_embeddings 函数",
@@ -1894,7 +1903,7 @@ window.QUESTIONS = [
     {
         "id": 139,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的 Answer Correctness 指标用于评估什么？",
         "options": [
             "RAG 应用生成答案的准确度",
@@ -1907,7 +1916,7 @@ window.QUESTIONS = [
     {
         "id": 140,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 compare_embedding_models 函数的作用？",
         "options": [
             "比较不同 Embeddin模型在 RA中的表现",
@@ -1920,7 +1929,7 @@ window.QUESTIONS = [
     {
         "id": 141,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在ask_llm_route函数中，如果问题类型是“内容翻译”，会使用哪个提示词？",
         "options": [
             "translate_prompt",
@@ -1933,7 +1942,7 @@ window.QUESTIONS = [
     {
         "id": 142,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，以下哪些要素可以用于提供任务的背景信息？",
         "options": [
             "上下文（Context）",
@@ -1946,7 +1955,7 @@ window.QUESTIONS = [
     {
         "id": 143,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些方法可以提升大模型对参考信息的查找效率？",
         "options": [
             "使用结构化的文档格式",
@@ -1959,7 +1968,7 @@ window.QUESTIONS = [
     {
         "id": 144,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法是默认的切片策略？",
         "options": [
             "句子切片",
@@ -1972,7 +1981,7 @@ window.QUESTIONS = [
     {
         "id": 145,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在创建索引时，VectorStoreIndex.from_documents方法包含哪些步骤？",
         "options": [
             "文档解析和文本分段",
@@ -1985,7 +1994,7 @@ window.QUESTIONS = [
     {
         "id": 146,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪种方法用于在检索后减少无关信息？",
         "options": [
             "重排序",
@@ -1998,7 +2007,7 @@ window.QUESTIONS = [
     {
         "id": 147,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法适合模型总是报 Token 超限的场景？",
         "options": [
             "Token 切片",
@@ -2011,7 +2020,7 @@ window.QUESTIONS = [
     {
         "id": 148,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "为了让大模型能够回答私域知识问题，以下哪种方法更加简便且高效？",
         "options": [
             "微调模型",
@@ -2024,7 +2033,7 @@ window.QUESTIONS = [
     {
         "id": 149,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪些切片方法适合模型总是报 Token 超限的场景？",
         "options": [
             "Token 切片",
@@ -2037,7 +2046,7 @@ window.QUESTIONS = [
     {
         "id": 150,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化后的答疑机器人中，以下哪种问题需要经过RAG链路？",
         "options": [
             "公司内部文档查询",
@@ -2050,7 +2059,7 @@ window.QUESTIONS = [
     {
         "id": 151,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context precision 的计算过程中，以下哪个步骤是必要的？",
         "options": [
             "按顺序读取 contexts 中的 contexti，判断其是否相关",
@@ -2063,7 +2072,7 @@ window.QUESTIONS = [
     {
         "id": 152,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，seed=42的作用是什么？",
         "options": [
             "使输出可重现",
@@ -2076,7 +2085,7 @@ window.QUESTIONS = [
     {
         "id": 153,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案适合快速开发和测试？",
         "options": [
             "内存向量存储",
@@ -2089,7 +2098,7 @@ window.QUESTIONS = [
     {
         "id": 154,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在示例中，答疑机器人没有理解用户的意图，主要原因是什么？",
         "options": [
             "知识库中的上下文干扰",
@@ -2102,7 +2111,7 @@ window.QUESTIONS = [
     {
         "id": 155,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "如果你想快速构建一个效果不错的 RAG 应用，可以参考哪篇文档？",
         "options": [
             "使用 LlamaIndex 构建 GraphRAG 应用",
@@ -2115,7 +2124,7 @@ window.QUESTIONS = [
     {
         "id": 156,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些方法可以提升文档的结构性？",
         "options": [
             "使用 Markdown 格式",
@@ -2128,7 +2137,7 @@ window.QUESTIONS = [
     {
         "id": 157,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在构建 RAG 应用时，哪种技术适合处理大规模文本数据？",
         "options": [
             "GraphRAG",
@@ -2141,7 +2150,7 @@ window.QUESTIONS = [
     {
         "id": 158,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法适合对 Token 数量有严格要求的场景？",
         "options": [
             "Token 切片",
@@ -2154,7 +2163,7 @@ window.QUESTIONS = [
     {
         "id": 159,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪些切片方法适合处理 Markdown 文档？",
         "options": [
             "Markdown 切片",
@@ -2167,7 +2176,7 @@ window.QUESTIONS = [
     {
         "id": 160,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在低温度（temperature=0.1）设置下，大模型的输出会有什么特点？",
         "options": [
             "输出内容非常多样化",
@@ -2180,7 +2189,7 @@ window.QUESTIONS = [
     {
         "id": 161,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的以下哪些指标用于评估整体回答质量？",
         "options": [
             "Answer Correctness",
@@ -2193,7 +2202,7 @@ window.QUESTIONS = [
     {
         "id": 162,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，事实准确度是通过什么模型生成的？",
         "options": [
             "大模型",
@@ -2206,7 +2215,7 @@ window.QUESTIONS = [
     {
         "id": 163,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是较旧的 Embedding 模型？",
         "options": [
             "text-embedding-v2",
@@ -2219,7 +2228,7 @@ window.QUESTIONS = [
     {
         "id": 164,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在将意图识别应用到答疑机器人中，ask_llm_route函数的主要作用是什么？",
         "options": [
             "根据问题类型选择不同的提示词和工作流程",
@@ -2232,7 +2241,7 @@ window.QUESTIONS = [
     {
         "id": 165,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些方法可以增加召回的文档切片数量？",
         "options": [
             "调整 similarity_top_k 参数",
@@ -2245,7 +2254,7 @@ window.QUESTIONS = [
     {
         "id": 166,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的 Faithfulness 指标用于评估什么？",
         "options": [
             "生成答案与检索资料的事实一致性",
@@ -2258,7 +2267,7 @@ window.QUESTIONS = [
     {
         "id": 167,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，上下文（Context）的主要作用是什么？",
         "options": [
             "提供任务的背景信息",
@@ -2271,7 +2280,7 @@ window.QUESTIONS = [
     {
         "id": 168,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，max_tokens=512的作用是什么？",
         "options": [
             "控制输出长度",
@@ -2284,7 +2293,7 @@ window.QUESTIONS = [
     {
         "id": 169,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案最简单？",
         "options": [
             "内存向量存储",
@@ -2297,7 +2306,7 @@ window.QUESTIONS = [
     {
         "id": 170,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在意图识别中，以下哪种方法涉及调整模型的部分或全部参数？",
         "options": [
             "对模型进行微调",
@@ -2310,7 +2319,7 @@ window.QUESTIONS = [
     {
         "id": 171,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，SimilarityPostprocessor(similarity_cutoff=0.2)的作用是什么？",
         "options": [
             "过滤掉相似度低于0.2的切片",
@@ -2323,7 +2332,7 @@ window.QUESTIONS = [
     {
         "id": 172,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于计算余弦相似度？",
         "options": [
             "cosine_similarity 函数",
@@ -2336,7 +2345,7 @@ window.QUESTIONS = [
     {
         "id": 173,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，score.to_pandas() 的主要作用是什么？",
         "options": [
             "将评估结果转换为 Pandas 数据框",
@@ -2349,7 +2358,7 @@ window.QUESTIONS = [
     {
         "id": 174,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在以下代码片段中，system_message的作用是什么？",
         "options": [
             "定义标签提取的规则和输出格式",
@@ -2362,7 +2371,7 @@ window.QUESTIONS = [
     {
         "id": 175,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法通过大模型生成假想文档？",
         "options": [
             "用假设文档来增强检索（HyDE）",
@@ -2375,7 +2384,7 @@ window.QUESTIONS = [
     {
         "id": 176,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档解析与切片阶段，以下哪种改进策略适用于文档切片长度过大的情况？",
         "options": [
             "减少切片长度或开发更合适的切片策略",
@@ -2388,7 +2397,7 @@ window.QUESTIONS = [
     {
         "id": 177,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的生成阶段，大模型的主要作用是什么？",
         "options": [
             "召回与问题最相关的文本段",
@@ -2401,7 +2410,7 @@ window.QUESTIONS = [
     {
         "id": 178,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中使用分隔符的主要作用是什么？",
         "options": [
             "使大模型抓住具体的目标，减少对不必要信息的处理",
@@ -2414,7 +2423,7 @@ window.QUESTIONS = [
     {
         "id": 179,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，以下哪些是提示词中规定的输入格式？",
         "options": [
             "【输入如下】",
@@ -2427,7 +2436,7 @@ window.QUESTIONS = [
     {
         "id": 180,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在代码中，similarity_top_k=5 的主要作用是什么？",
         "options": [
             "一次检索出 5 个文档切片",
@@ -2440,7 +2449,7 @@ window.QUESTIONS = [
     {
         "id": 181,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，改写后的新query的主要作用是什么？",
         "options": [
             "提高检索准确性",
@@ -2453,7 +2462,7 @@ window.QUESTIONS = [
     {
         "id": 182,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，data_samples 字典的主要作用是什么？",
         "options": [
             "存储问题、答案和真实答案的数据",
@@ -2466,7 +2475,7 @@ window.QUESTIONS = [
     {
         "id": 183,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪种方法通过增加更多信息让检索结果更全面？",
         "options": [
             "问题扩写",
@@ -2479,7 +2488,7 @@ window.QUESTIONS = [
     {
         "id": 184,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪种方法可以提升文档的结构性？",
         "options": [
             "使用 Markdown 格式",
@@ -2492,7 +2501,7 @@ window.QUESTIONS = [
     {
         "id": 185,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化后的答疑机器人中，以下哪种方法可以避免知识库信息干扰大模型推理？",
         "options": [
             "根据问题类型选择不同的提示词和工作流程",
@@ -2505,7 +2514,7 @@ window.QUESTIONS = [
     {
         "id": 186,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在提取标签增强检索的过程中，以下哪个步骤是错误的？",
         "options": [
             "建立索引时，从文档切片中提取结构化标签",
@@ -2518,7 +2527,7 @@ window.QUESTIONS = [
     {
         "id": 187,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，evaluate 函数的主要作用是什么？",
         "options": [
             "评估数据集中的答案正确性",
@@ -2531,7 +2540,7 @@ window.QUESTIONS = [
     {
         "id": 188,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在加载本地索引文件时，load_index_from_storage方法的主要作用是什么？",
         "options": [
             "将指定文件夹中的文件加载为document对象",
@@ -2544,7 +2553,7 @@ window.QUESTIONS = [
     {
         "id": 189,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context recall 的计算过程中，以下哪个步骤是必要的？",
         "options": [
             "由大模型判断每个观点是否能在 contexts 中找到依据",
@@ -2557,7 +2566,7 @@ window.QUESTIONS = [
     {
         "id": 190,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，直接将用户输入与文本段进行相似度比较可能会导致什么问题？",
         "options": [
             "检索结果不准确",
@@ -2570,7 +2579,7 @@ window.QUESTIONS = [
     {
         "id": 191,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在需要创意和多样化的场景中，建议如何设置temperature参数？",
         "options": [
             "设置较高的温度值",
@@ -2583,7 +2592,7 @@ window.QUESTIONS = [
     {
         "id": 192,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 cosine_similarity 函数的作用？",
         "options": [
             "计算向量之间的余弦相似度",
@@ -2596,7 +2605,7 @@ window.QUESTIONS = [
     {
         "id": 193,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪些是内存向量存储的适用场景？",
         "options": [
             "开发测试",
@@ -2609,7 +2618,7 @@ window.QUESTIONS = [
     {
         "id": 194,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案支持向量 + 标量的混合检索？",
         "options": [
             "云服务向量存储",
@@ -2622,7 +2631,7 @@ window.QUESTIONS = [
     {
         "id": 195,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，custom_prompt模板的主要作用是什么？",
         "options": [
             "定义如何将用户问题改写为独立的问题",
@@ -2635,7 +2644,7 @@ window.QUESTIONS = [
     {
         "id": 196,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大模型的问答工作流程中，哪个阶段负责将句子分割成更小且具有独立语义的词语？",
         "options": [
             "输入文本分词化",
@@ -2648,7 +2657,7 @@ window.QUESTIONS = [
     {
         "id": 197,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，model=\"qwen-turbo\"的作用是什么？",
         "options": [
             "指定使用的模型",
@@ -2661,7 +2670,7 @@ window.QUESTIONS = [
     {
         "id": 198,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在意图识别中，以下哪些是对模型进行微调的优点？",
         "options": [
             "使模型更好地对意图进行分类",
@@ -2674,7 +2683,7 @@ window.QUESTIONS = [
     {
         "id": 199,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，DashScopeRenank(top_n=3,model=\"gte-renank\")的作用是什么？",
         "options": [
             "从召回的切片中重排序并选择最相关的3条",
@@ -2687,7 +2696,7 @@ window.QUESTIONS = [
     {
         "id": 200,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种方法用于准备测试数据？",
         "options": [
             "compare_embeddings 函数",
@@ -2700,7 +2709,7 @@ window.QUESTIONS = [
     {
         "id": 201,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在本教程中，Planner Agent 的作用是什么？（）",
         "options": [
             "负责执行工具函数",
@@ -2713,7 +2722,7 @@ window.QUESTIONS = [
     {
         "id": 202,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法用假设文档来增强检索？",
         "options": [
             "用假设文档来增强检索（HyDE）",
@@ -2726,7 +2735,7 @@ window.QUESTIONS = [
     {
         "id": 203,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在意图识别中，以下哪些是使用提示词的优点？",
         "options": [
             "不需要修改模型本身的参数",
@@ -2739,7 +2748,7 @@ window.QUESTIONS = [
     {
         "id": 204,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法通过大模型生成更完整的问题？",
         "options": [
             "使用大模型扩充用户问题",
@@ -2752,7 +2761,7 @@ window.QUESTIONS = [
     {
         "id": 205,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Context Precision 指标检测的是？（）",
         "options": [
             "整体回答质量的评估",
@@ -2765,7 +2774,7 @@ window.QUESTIONS = [
     {
         "id": 206,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法通过分解复杂问题为多个子问题来解决问题？",
         "options": [
             "将单一查询改写为多步骤查询",
@@ -2778,7 +2787,7 @@ window.QUESTIONS = [
     {
         "id": 207,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪种文档格式特别适合 RAG 场景？",
         "options": [
             "Markdown",
@@ -2791,7 +2800,7 @@ window.QUESTIONS = [
     {
         "id": 208,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，如果问题类型是“公司内部文档查询”，会使用哪个方法？",
         "options": [
             "ra ask",
@@ -2804,7 +2813,7 @@ window.QUESTIONS = [
     {
         "id": 209,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中，如果已大量使用某种符号（如【】），应该如何处理？",
         "options": [
             "避免用该符号作为分隔符，以防混淆",
@@ -2817,7 +2826,7 @@ window.QUESTIONS = [
     {
         "id": 210,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，以下哪些工具可以快速实现多轮对话？",
         "options": [
             "LlamaIndex",
@@ -2830,7 +2839,7 @@ window.QUESTIONS = [
     {
         "id": 211,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，如果问题类型无法识别，会返回什么？",
         "options": [
             "“未能识别问题类型，请重新输入。”",
@@ -2843,7 +2852,7 @@ window.QUESTIONS = [
     {
         "id": 212,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，样例（Sample）的主要作用是什么？",
         "options": [
             "让大模型参考具体案例",
@@ -2856,7 +2865,7 @@ window.QUESTIONS = [
     {
         "id": 213,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在以下代码片段中，client.chat.completions.create的作用是什么？",
         "options": [
             "调用API进行标签提取",
@@ -2869,7 +2878,7 @@ window.QUESTIONS = [
     {
         "id": 214,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "如果你想深入了解如何实际运用 GraphRAG，可以参考哪个教程？",
         "options": [
             "使用 LlamaIndex 构建 GraphRAG 应用",
@@ -2882,7 +2891,7 @@ window.QUESTIONS = [
     {
         "id": 215,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "GraphRAG 技术结合了哪两种技术的优点？",
         "options": [
             "检索增强生成（RAG）和查询聚焦摘要（QFS）",
@@ -2895,7 +2904,7 @@ window.QUESTIONS = [
     {
         "id": 216,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪些是本地向量数据库的适用场景？",
         "options": [
             "小规模应用",
@@ -2908,7 +2917,7 @@ window.QUESTIONS = [
     {
         "id": 217,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法根据语义相关性自适应地选择切片点？",
         "options": [
             "语义切片",
@@ -2921,7 +2930,7 @@ window.QUESTIONS = [
     {
         "id": 218,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪些方法通过分解复杂问题为多个子问题来解决问题？",
         "options": [
             "将单一查询改写为多步骤查询",
@@ -2934,7 +2943,7 @@ window.QUESTIONS = [
     {
         "id": 219,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 Ragas 中，context recall 指标的主要作用是什么？",
         "options": [
             "评估 contexts 与 ground_trut的事实一致性程度",
@@ -2947,7 +2956,7 @@ window.QUESTIONS = [
     {
         "id": 220,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化后的答疑机器人中，以下哪种方法可以节省资源？",
         "options": [
             "根据问题类型选择不同的提示词和工作流程",
@@ -2960,7 +2969,7 @@ window.QUESTIONS = [
     {
         "id": 221,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档解析与切片阶段，以下哪种改进策略适用于文档类型不统一的情况？",
         "options": [
             "开发对应格式的解析器或转换文档格式",
@@ -2973,7 +2982,7 @@ window.QUESTIONS = [
     {
         "id": 222,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，以下哪些是COT方法的优点？",
         "options": [
             "提升大模型在复杂任务中的表现能力",
@@ -2986,7 +2995,7 @@ window.QUESTIONS = [
     {
         "id": 223,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 Answer Correctness 的计算过程中，以下哪种方法用于计算向量相似度？",
         "options": [
             "余弦相似度",
@@ -2999,7 +3008,7 @@ window.QUESTIONS = [
     {
         "id": 224,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在创建提问引擎时，index.as_query_engine方法的主要作用是什么？",
         "options": [
             "将指定文件夹中的文件加载为document对象",
@@ -3012,7 +3021,7 @@ window.QUESTIONS = [
     {
         "id": 225,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法将单一查询改写为多步骤查询？",
         "options": [
             "将单一查询改写为多步骤查询",
@@ -3025,7 +3034,7 @@ window.QUESTIONS = [
     {
         "id": 226,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在需要生成新闻初稿和代码的场景中，建议如何设置top_p参数？",
         "options": [
             "设置较高的top_p值",
@@ -3038,7 +3047,7 @@ window.QUESTIONS = [
     {
         "id": 227,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在控制大模型生成内容的随机性时，temperature参数的作用是什么？",
         "options": [
             "调整候选Token的概率分布",
@@ -3051,7 +3060,7 @@ window.QUESTIONS = [
     {
         "id": 228,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "为了控制生成内容的随机性，通常使用哪两个参数进行调整？",
         "options": [
             "temperature和top_p",
@@ -3064,7 +3073,7 @@ window.QUESTIONS = [
     {
         "id": 229,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在创建RAG应用时，SimpleDirectoryReader方法的主要作用是什么？",
         "options": [
             "将指定文件夹中的文件加载为document对象",
@@ -3077,7 +3086,7 @@ window.QUESTIONS = [
     {
         "id": 230,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，LlamaIndex提供了什么工具？",
         "options": [
             "快速实现多轮对话",
@@ -3090,7 +3099,7 @@ window.QUESTIONS = [
     {
         "id": 231,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在意图识别中，使用提示词的主要作用是什么？",
         "options": [
             "引导大模型生成符合预期的回答",
@@ -3103,7 +3112,7 @@ window.QUESTIONS = [
     {
         "id": 232,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的 Context Precision 指标用于评估什么？",
         "options": [
             "contexts 中与准确答案相关的条目是否排名靠前、占比高",
@@ -3116,7 +3125,7 @@ window.QUESTIONS = [
     {
         "id": 233,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案按量付费、自动扩容？",
         "options": [
             "云服务向量存储",
@@ -3129,7 +3138,7 @@ window.QUESTIONS = [
     {
         "id": 234,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在开发大模型应用时，提示词模板的主要作用是什么？",
         "options": [
             "预设部分信息以约束大模型的行为",
@@ -3142,7 +3151,7 @@ window.QUESTIONS = [
     {
         "id": 235,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案无需关注运维，自动扩容？",
         "options": [
             "云服务向量存储",
@@ -3155,7 +3164,7 @@ window.QUESTIONS = [
     {
         "id": 236,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法适合文档逻辑性强、内容专业的场景？",
         "options": [
             "语义切片",
@@ -3168,7 +3177,7 @@ window.QUESTIONS = [
     {
         "id": 237,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "优化后的答疑机器人为什么不需要每次提问都经过RAG链路？",
         "options": [
             "节省资源并避免知识库信息干扰大模型推理",
@@ -3181,7 +3190,7 @@ window.QUESTIONS = [
     {
         "id": 238,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在代码中，index.as_query_engine 方法的主要作用是什么？",
         "options": [
             "创建用于提问的引擎",
@@ -3194,7 +3203,7 @@ window.QUESTIONS = [
     {
         "id": 239,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法通过生成假想文档来增强检索效果？",
         "options": [
             "用假设文档来增强检索（HyDE）",
@@ -3207,7 +3216,7 @@ window.QUESTIONS = [
     {
         "id": 240,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在高温度（temperature=1.2）设置下，大模型的输出会有什么特点？",
         "options": [
             "输出内容非常多样化",
@@ -3220,7 +3229,7 @@ window.QUESTIONS = [
     {
         "id": 241,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种 Embedding 模型是较旧的版本？",
         "options": [
             "text-embedding-v2",
@@ -3233,7 +3242,7 @@ window.QUESTIONS = [
     {
         "id": 242,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "如果 context precision 指标得分较低，以下哪种优化措施是可行的？",
         "options": [
             "在检索阶段加入 rerank（重排序）",
@@ -3246,7 +3255,7 @@ window.QUESTIONS = [
     {
         "id": 243,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的 Answer Relevancy 指标用于评估什么？",
         "options": [
             "生成答案与问题的相关性",
@@ -3259,7 +3268,7 @@ window.QUESTIONS = [
     {
         "id": 244,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法适合处理长文档且需要保持上下文？",
         "options": [
             "句子窗口切片",
@@ -3272,7 +3281,7 @@ window.QUESTIONS = [
     {
         "id": 245,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，is_chat_model=True的作用是什么？",
         "options": [
             "指定模型为聊天模型",
@@ -3285,7 +3294,7 @@ window.QUESTIONS = [
     {
         "id": 246,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在自定义提示词模板中，以下哪项是用于处理涉及隐私问题的注意事项？",
         "options": [
             "提醒用户问题触及安全红线，无法提供",
@@ -3298,7 +3307,7 @@ window.QUESTIONS = [
     {
         "id": 247,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些是调整 similarity_top_k 参数的好处？",
         "options": [
             "增加召回的文档切片数量",
@@ -3311,7 +3320,7 @@ window.QUESTIONS = [
     {
         "id": 248,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context recall 指标时，以下哪种方法可以确保知识库内容完备？",
         "options": [
             "对比知识库内容与测试样本",
@@ -3324,7 +3333,7 @@ window.QUESTIONS = [
     {
         "id": 249,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案适合小规模应用？",
         "options": [
             "本地向量数据库",
@@ -3337,7 +3346,7 @@ window.QUESTIONS = [
     {
         "id": 250,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 RAG 工作流程中，以下哪个步骤涉及将文档内容进行切片？",
         "options": [
             "文档解析与切片阶段",
@@ -3350,7 +3359,7 @@ window.QUESTIONS = [
     {
         "id": 251,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪个步骤最能体现 RAG 中的“知识增强”的思想?",
         "options": [
             "文档解析:将PDF转换为Markdown",
@@ -3363,7 +3372,7 @@ window.QUESTIONS = [
     {
         "id": 252,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的检索生成阶段，检索阶段的主要任务是什么？",
         "options": [
             "生成最终的回答",
@@ -3376,7 +3385,7 @@ window.QUESTIONS = [
     {
         "id": 253,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的 Context Recall 指标用于评估什么？",
         "options": [
             "相关参考资料被检索到的数量",
@@ -3389,7 +3398,7 @@ window.QUESTIONS = [
     {
         "id": 254,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些方法可以提升大模型对参考信息的理解？",
         "options": [
             "使用结构化的文档格式",
@@ -3402,7 +3411,7 @@ window.QUESTIONS = [
     {
         "id": 255,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在保存与加载索引时，index.storage_context.persist方法的主要作用是什么？",
         "options": [
             "将索引保存为本地文件",
@@ -3415,7 +3424,7 @@ window.QUESTIONS = [
     {
         "id": 256,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在创建索引时，以下哪些方法被使用？",
         "options": [
             "SimpleDirectoryReader",
@@ -3428,7 +3437,7 @@ window.QUESTIONS = [
     {
         "id": 257,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文本向量化过程中，embedding模型的主要作用是什么？",
         "options": [
             "将自然语言转化为计算机能够理解的数字形式",
@@ -3441,7 +3450,7 @@ window.QUESTIONS = [
     {
         "id": 258,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法通过滑动窗口检索补充相邻切片？",
         "options": [
             "滑动窗口检索",
@@ -3454,7 +3463,7 @@ window.QUESTIONS = [
     {
         "id": 259,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context recall 的计算过程中，以下哪些是 ground_truth 观点列表的生成依据？",
         "options": [
             "ground_truth",
@@ -3467,7 +3476,7 @@ window.QUESTIONS = [
     {
         "id": 260,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，api_key=os.getenv(\"DASHSCOPE_API_KEY\")的作用是什么？",
         "options": [
             "设置API密钥",
@@ -3480,7 +3489,7 @@ window.QUESTIONS = [
     {
         "id": 261,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化后的答疑机器人中，以下哪种问题不需要经过RAG链路？",
         "options": [
             "检查文档错误",
@@ -3493,7 +3502,7 @@ window.QUESTIONS = [
     {
         "id": 262,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法通过重排序+过滤减少无关信息？",
         "options": [
             "重排序",
@@ -3506,7 +3515,7 @@ window.QUESTIONS = [
     {
         "id": 263,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪种方法使用大模型扩充用户问题？",
         "options": [
             "使用大模型扩充用户问题",
@@ -3519,7 +3528,7 @@ window.QUESTIONS = [
     {
         "id": 264,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用中，以下哪些组件可以用于存储向量化后的文本段？",
         "options": [
             "向量数据库",
@@ -3532,7 +3541,7 @@ window.QUESTIONS = [
     {
         "id": 265,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪种 Embedding 模型通常表现更好？",
         "options": [
             "更新的 Embedding 模型",
@@ -3545,7 +3554,7 @@ window.QUESTIONS = [
     {
         "id": 266,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，语义相似度是通过什么模型得到的？",
         "options": [
             "Embedding 模型",
@@ -3558,7 +3567,7 @@ window.QUESTIONS = [
     {
         "id": 267,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，为什么不能直接将完整历史对话与问题输入到检索系统？",
         "options": [
             "检索系统无法处理长文本",
@@ -3571,7 +3580,7 @@ window.QUESTIONS = [
     {
         "id": 268,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "百炼提供了一系列 LlamaIndex 组件，其主要目的是什么？",
         "options": [
             "方便继续使用熟悉的 LlamaIndex API 构建 RAG应用",
@@ -3584,7 +3593,7 @@ window.QUESTIONS = [
     {
         "id": 269,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，OpenAILike 类的主要作用是什么？",
         "options": [
             "加载大模型",
@@ -3597,7 +3606,7 @@ window.QUESTIONS = [
     {
         "id": 270,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用中，检索生成阶段包括以下哪些步骤？",
         "options": [
             "检索与生成",
@@ -3610,7 +3619,7 @@ window.QUESTIONS = [
     {
         "id": 271,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在构建大语言模型提示词过程中，以下哪种分隔符最适合用于区分不同的对话轮次或历史记录?",
         "options": [
             "＜＜用>> 你好 ＜＜机器人>> 你好,有什么可以帮你的?",
@@ -3623,7 +3632,7 @@ window.QUESTIONS = [
     {
         "id": 272,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在优化 answer correctness 指标时，以下哪些是调整大模型生成超参数（如 temperature）的好处？",
         "options": [
             "提升生成答案的准确度",
@@ -3636,7 +3645,7 @@ window.QUESTIONS = [
     {
         "id": 273,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法可以精确控制 Token 数量？",
         "options": [
             "Token 切片",
@@ -3649,7 +3658,7 @@ window.QUESTIONS = [
     {
         "id": 274,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，completion.choices[0].message.content的作用是什么？",
         "options": [
             "获取提取的标签内容",
@@ -3662,7 +3671,7 @@ window.QUESTIONS = [
     {
         "id": 275,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在大模型的问答工作流程中，哪个阶段负责将Token转化为固定维度的向量？",
         "options": [
             "输入文本分词化",
@@ -3675,7 +3684,7 @@ window.QUESTIONS = [
     {
         "id": 276,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中，以下哪种符号可以作为分隔符？",
         "options": [
             "【】",
@@ -3688,7 +3697,7 @@ window.QUESTIONS = [
     {
         "id": 277,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，以下哪些要素可以用于明确大模型的具体任务？",
         "options": [
             "任务目标（Object）",
@@ -3701,7 +3710,7 @@ window.QUESTIONS = [
     {
         "id": 278,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索阶段，embedding模型如何找到与用户问题最相似的文本段？",
         "options": [
             "将用户问题转化为向量并在向量数据库中找出最相似的向量",
@@ -3714,7 +3723,7 @@ window.QUESTIONS = [
     {
         "id": 279,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪种切片方法专门针对 Markdown 文档优化？",
         "options": [
             "Markdown 切片",
@@ -3727,7 +3736,7 @@ window.QUESTIONS = [
     {
         "id": 280,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用中，建立索引阶段包括以下哪些步骤？",
         "options": [
             "文档解析、文本分段、文本向量化、存储索引",
@@ -3740,7 +3749,7 @@ window.QUESTIONS = [
     {
         "id": 281,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，answer_correctness 指标的主要作用是什么？",
         "options": [
             "评估答案的准确度",
@@ -3753,7 +3762,7 @@ window.QUESTIONS = [
     {
         "id": 282,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪个模型用于生成观点列表？",
         "options": [
             "大模型",
@@ -3766,7 +3775,7 @@ window.QUESTIONS = [
     {
         "id": 283,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪种向量存储方案提供完善的监控和管理工具？",
         "options": [
             "云服务向量存储",
@@ -3779,7 +3788,7 @@ window.QUESTIONS = [
     {
         "id": 284,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在top_p=0.9的设置下，大模型的输出会有什么特点？",
         "options": [
             "输出内容非常多样化",
@@ -3792,7 +3801,7 @@ window.QUESTIONS = [
     {
         "id": 285,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大模型推理阶段，模型如何选择下一个输出的Token？",
         "options": [
             "随机选择一个Token",
@@ -3805,7 +3814,7 @@ window.QUESTIONS = [
     {
         "id": 286,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的建立索引阶段，主要目的是什么？",
         "options": [
             "将私有知识文档转换为高效检索的形式",
@@ -3818,7 +3827,7 @@ window.QUESTIONS = [
     {
         "id": 287,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，display(evaluate_result(question, response, ground_truth))的作用是什么？",
         "options": [
             "显示评估结果",
@@ -3831,7 +3840,7 @@ window.QUESTIONS = [
     {
         "id": 288,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在复杂任务中，使用思维链（COT）方法的主要作用是什么？",
         "options": [
             "让大模型逐步推导出正确答案",
@@ -3844,7 +3853,7 @@ window.QUESTIONS = [
     {
         "id": 289,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在LlamaIndex的默认提示词模板中，query_str表示什么？",
         "options": [
             "用户的问题",
@@ -3857,7 +3866,7 @@ window.QUESTIONS = [
     {
         "id": 290,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，similarity_top_k=20的作用是什么？",
         "options": [
             "设置召回切片的最大数量",
@@ -3870,7 +3879,7 @@ window.QUESTIONS = [
     {
         "id": 291,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context recall 的计算过程中，以下哪个步骤是必要的？",
         "options": [
             "由大模型将 ground_trut分解成观点列表",
@@ -3883,7 +3892,7 @@ window.QUESTIONS = [
     {
         "id": 292,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法通过思考并规划多次检索来解决问题？",
         "options": [
             "思考并规划多次检索",
@@ -3896,7 +3905,7 @@ window.QUESTIONS = [
     {
         "id": 293,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的以下哪些指标用于评估生成答案与问题的相关性？",
         "options": [
             "Answer Relevancy",
@@ -3909,7 +3918,7 @@ window.QUESTIONS = [
     {
         "id": 294,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下关于 LoRA 的描述，哪一项是错误的？（）",
         "options": [
             "LoR可以有效降低微调大型语言模型的成本。",
@@ -3922,7 +3931,7 @@ window.QUESTIONS = [
     {
         "id": 295,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，presence_penalty=0.6的作用是什么？",
         "options": [
             "减少输出的重复性",
@@ -3935,7 +3944,7 @@ window.QUESTIONS = [
     {
         "id": 296,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在需要生成创意写作和诗歌的场景中，建议如何设置top_p参数？",
         "options": [
             "设置较高的top_p值",
@@ -3948,7 +3957,7 @@ window.QUESTIONS = [
     {
         "id": 297,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "生成式大模型可能会引发内容安全风险，以下哪个选项不属于内容安全风险?",
         "options": [
             "生成违法信息",
@@ -3961,7 +3970,7 @@ window.QUESTIONS = [
     {
         "id": 298,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "Qwen-Max线上模型可能指的是以下哪一种情况?",
         "options": [
             "经过大规模预训练的原始模型",
@@ -3974,7 +3983,7 @@ window.QUESTIONS = [
     {
         "id": 299,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "关于技术团队在大模型微调项目中的作用，下列哪一项描述不够准确?",
         "options": [
             "确保团队成员掌握深度学习、自然语言处理等相关技术",
@@ -3987,7 +3996,7 @@ window.QUESTIONS = [
     {
         "id": 300,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在确保计算资源与基础设施满足大模型微调需求时，哪项不是关键考量指标?",
         "options": [
             "GPU的数量和型号，以支持大规模并行计算",
@@ -4000,7 +4009,7 @@ window.QUESTIONS = [
     {
         "id": 301,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下描述中错误的是?",
         "options": [
             "优秀的基础模型（大模型）只需要自身庞大的参数规模和计算硬件，对数据量没有太大要求",
@@ -4013,7 +4022,7 @@ window.QUESTIONS = [
     {
         "id": 302,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在大模型应用备案的过程中，未完成合规手续的应用将会面临什么样的处理措施?",
         "options": [
             "数据删除",
@@ -4026,7 +4035,7 @@ window.QUESTIONS = [
     {
         "id": 303,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "如果我们让大模型系统设计一个分阶段、分批次的投资策略，大模型系统需要考虑各种不同的资产组合、投资策略，综合考虑成本、风险、收益之后，生成最优的投资策略。那么，在设计大模型系统应对多路径策略规划时，以下哪种方式不能有效避免策略冲突和资源浪费?",
         "options": [
             "建立中心化协调机制，监控并调度各Agent的行动策略",
@@ -4039,7 +4048,7 @@ window.QUESTIONS = [
     {
         "id": 304,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在ModelScope-Agent中，如何实现对多轮对话中工具参数的有效提取?",
         "options": [
             "静态定义每种工具所需参数，不允许动态调整",
@@ -4052,7 +4061,7 @@ window.QUESTIONS = [
     {
         "id": 305,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "多Agent系统通过模拟或利用多个交互的智能体 （Agents） 来解決复杂问题，具有分布性、适应性、和动态性。以下哪个场景适合采用多Agent系统比单Agent系统效率更高？",
         "options": [
             "简单的垃圾分类机器人，仅需识别并分拣几种固定类型的垃圾",
@@ -4065,7 +4074,7 @@ window.QUESTIONS = [
     {
         "id": 306,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "ModelScope-Agent的核心优势之一是其高度的可定制性，这主要得益于其",
         "options": [
             "强大的预训练模型阵容，直接提供最优性能无需调整",
@@ -4078,7 +4087,7 @@ window.QUESTIONS = [
     {
         "id": 307,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "以下哪项插件功能最可能通过大模型API及百炼应用API结合实现，以辅助日常办公？",
         "options": [
             "高级图像识别与编辑",
@@ -4091,7 +4100,7 @@ window.QUESTIONS = [
     {
         "id": 308,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "本地上传知识库数据时，最大支持单文档大小为？",
         "options": [
             "10 MB",
@@ -4104,7 +4113,7 @@ window.QUESTIONS = [
     {
         "id": 309,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪个选项属于我们在本教程中介绍的RAG应用范围？",
         "options": [
             "向大模型输入“请介绍一下自己”",
@@ -4117,7 +4126,7 @@ window.QUESTIONS = [
     {
         "id": 310,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "预训练之后，为了使模型更好地适应对话任务，通常会采用哪种技术进行模型调整？",
         "options": [
             "SFT",
@@ -4130,7 +4139,7 @@ window.QUESTIONS = [
     {
         "id": 311,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "哪—个项目强调了软件开发中多智能体协作的组织结构扁平化，并能够直接根据用户请求生成全面的软件开发文档套件？",
         "options": [
             "研究斯坦福小镇虚拟社区",
@@ -4143,7 +4152,7 @@ window.QUESTIONS = [
     {
         "id": 312,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在训练大模型时，为防止信息泄露，可以采取的有效措施是？",
         "options": [
             "数据混杂处理",
@@ -4156,7 +4165,7 @@ window.QUESTIONS = [
     {
         "id": 313,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在设计LLM提示词时使用少样本提示，以下哪项不是提高模型性能的建议？",
         "options": [
             "精选代表性样本",
@@ -4169,7 +4178,7 @@ window.QUESTIONS = [
     {
         "id": 314,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在使用大模型API处理调查问卷时，以下哪个步骤不是必要的？",
         "options": [
             "将问卷数据预处理为适合模型输入的格式",
@@ -4182,7 +4191,7 @@ window.QUESTIONS = [
     {
         "id": 315,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在下列应用场景中，哪—个最不适合采用单Agent模式进行处理？",
         "options": [
             "自动驾驶汽车的路径规划与决策",
@@ -4195,7 +4204,7 @@ window.QUESTIONS = [
     {
         "id": 316,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题处理策略中，通过将复杂问题拆解为更小、更易管理的部分来改善理解的是哪个方法？",
         "options": [
             "RAG-Fusion问题过滤融合",
@@ -4208,7 +4217,7 @@ window.QUESTIONS = [
     {
         "id": 317,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "为了确保与通义千问大模型的交互更加个性化和连续性，下列哪项策略最不推荐？",
         "options": [
             "在每次请求时都提供完整的对话历史",
@@ -4221,7 +4230,7 @@ window.QUESTIONS = [
     {
         "id": 318,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在Al模型的训练过程中，哪一阶段主要旨在通过模拟人类的评价机制，调整模型输出以更贴近人类偏好和道德标准？",
         "options": [
             "预训练阶段",
@@ -4234,7 +4243,7 @@ window.QUESTIONS = [
     {
         "id": 319,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "为了加强大语言模型生成内容的信任机制，哪项措施最具有效果？",
         "options": [
             "提高模型参数",
@@ -4247,7 +4256,7 @@ window.QUESTIONS = [
     {
         "id": 320,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在图文检索任务中，哪种技术被用来结合图像内容和关联文本描述，以提高检索的准确性？",
         "options": [
             "stable diffusion",
@@ -4260,7 +4269,7 @@ window.QUESTIONS = [
     {
         "id": 321,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "下列关于利用列表给通义千问大模型增加记忆的描述中，哪一项是不正确的？",
         "options": [
             "每次交互前，可以在列表中添加新的对话记录",
@@ -4273,7 +4282,7 @@ window.QUESTIONS = [
     {
         "id": 322,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在LLM使用中，如何通过提示词来优化模型的推理能力和内容生成的逻辑性？",
         "options": [
             "仅提供非常简短的提示，让模型自由发挥，不加任何约束",
@@ -4286,7 +4295,7 @@ window.QUESTIONS = [
     {
         "id": 323,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "关于业务领域相关数据集的准备，以下哪种做法可能会导致微调效果不佳？",
         "options": [
             "数据集包含丰富多样的任务相关示例",
@@ -4299,7 +4308,7 @@ window.QUESTIONS = [
     {
         "id": 324,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "RLHF (Reinforcement Learning from Human Feedback） 的主要目的是什么？",
         "options": [
             "提升模型的泛化能力",
@@ -4312,7 +4321,7 @@ window.QUESTIONS = [
     {
         "id": 325,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在实验教程中，大模型在RAG应用中的作用是什么？",
         "options": [
             "根据用户的问题进行知识库片段的召回",
@@ -4325,7 +4334,7 @@ window.QUESTIONS = [
     {
         "id": 326,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在开发智能新闻摘要应用的过程中，工程师利用大语言模型来生成文章摘要。假设在某个例子中，模型需决定摘要中下一个词汇，已知“经济”之后最可能的两个词汇按概率高低依次是“增长”（概率0.7）和“衰退”(概率0.3)。则当“经济”之后，模型大概率会如何选择？",
         "options": [
             "选择“增长”，因为其概率高于“衰退”",
@@ -4338,7 +4347,7 @@ window.QUESTIONS = [
     {
         "id": 327,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "利用代码生成器插件通过大模型API可以实现什么功能？",
         "options": [
             "自动生成高质量的代码片段",
@@ -4351,7 +4360,7 @@ window.QUESTIONS = [
     {
         "id": 328,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在设计LLM提示词时要求模型生成特定风格的文档时，以下哪项不是必要的？",
         "options": [
             "提供风格的具体定义",
@@ -4364,7 +4373,7 @@ window.QUESTIONS = [
     {
         "id": 329,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "ModelScope-Agent如何实现对复杂任务的处理？",
         "options": [
             "通过预设的有限状态机直接执行固定流程，不支持动态调整",
@@ -4377,7 +4386,7 @@ window.QUESTIONS = [
     {
         "id": 330,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "预训练 (Pre-training）在自然语言处理大模型中的核心目的是什么？",
         "options": [
             "利用大量末标注文本数据学习通用的语言结构和模式",
@@ -4390,7 +4399,7 @@ window.QUESTIONS = [
     {
         "id": 331,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "为了提高知识索引的性能，以下哪项技术涉及到了使用更先进的嵌入模型？",
         "options": [
             "Decomposition问题分解",
@@ -4403,7 +4412,7 @@ window.QUESTIONS = [
     {
         "id": 332,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在LLM提示词中分配角色时，以下哪项不是需要考虑的因素？",
         "options": [
             "角色的年龄阶段",
@@ -4416,7 +4425,7 @@ window.QUESTIONS = [
     {
         "id": 333,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "以下哪项可以最淮确地描述大语言模型与多模态模型之间的区别？",
         "options": [
             "大语言模型专门处理文本数据，而多模态模型能够处理包括文本、图像、音频和视频在内的多种类型的数据，并能理解这些模态间的关联",
@@ -4429,7 +4438,7 @@ window.QUESTIONS = [
     {
         "id": 334,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "假设有一个多Agent系统用于大规模灾害救援，其中涉及搜索、救援和物资分配等多个子任务，以下哪个设计原则对于提升系统整体效能最为关键？",
         "options": [
             "所有Agent均采用相同的算法和策略，以保证一致性",
@@ -4442,7 +4451,7 @@ window.QUESTIONS = [
     {
         "id": 335,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "小明在创建RAG应用时，知识库配置部分的相似度阈值设置较高，在应用创建界面设置检索片段数为5，进行提问时检索到高于相似度阈值的文本块只有3个，最后实际召回的文本块有几个？",
         "options": [
             "2",
@@ -4455,7 +4464,7 @@ window.QUESTIONS = [
     {
         "id": 336,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "以下关于用户对生成的内容负责的描达中，最合理的是哪一项？",
         "options": [
             "忽略内容的合法性和适宜性",
@@ -4468,7 +4477,7 @@ window.QUESTIONS = [
     {
         "id": 337,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大语言模型在生成文本时，依赖于一种特定的方式来预测下一个词的概率。这种方式允许模型根据已经生成的文本来预测接下来的词语。这种方式被称为什么？",
         "options": [
             "自注意力机制",
@@ -4481,7 +4490,7 @@ window.QUESTIONS = [
     {
         "id": 338,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪项不是少样本提示的应用场景？",
         "options": [
             "数据稀缺或需要快速适应新任务的场景",
@@ -4494,7 +4503,7 @@ window.QUESTIONS = [
     {
         "id": 339,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "用户希望大模型根据描述创造一幅画，这需要开启哪个插件来实现？",
         "options": [
             "代码解释器",
@@ -4507,7 +4516,7 @@ window.QUESTIONS = [
     {
         "id": 340,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "思维链 （CoT）提示技术在以下哪个领域中的应用可能不是最直接的？",
         "options": [
             "编程问题解決",
@@ -4520,7 +4529,7 @@ window.QUESTIONS = [
     {
         "id": 341,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在大模型知识问答增强RAG的方案中，哪个技术是通过提出多个相关查询来提高问题理解的广度和深度？",
         "options": [
             "Step Back 问题摘要",
@@ -4533,7 +4542,7 @@ window.QUESTIONS = [
     {
         "id": 342,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "使用Python notebook调用大模型API处理调查问卷时，以下哪个步骤不是必要的？",
         "options": [
             "安装并配置API软件依赖库",
@@ -4546,7 +4555,7 @@ window.QUESTIONS = [
     {
         "id": 343,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "关于大模型内容生成过程中的信任机制，以下哪项措施可以提高用户对生成内容的信任？",
         "options": [
             "增加训练数据量",
@@ -4559,7 +4568,7 @@ window.QUESTIONS = [
     {
         "id": 344,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在大语言模型的安全风险中，〝不安全的插件设计\"可能导致哪些后果？",
         "options": [
             "模型生成的文本含有歧视性内容",
@@ -4572,7 +4581,7 @@ window.QUESTIONS = [
     {
         "id": 345,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在开发智能体系统中，智能体的工作日志、历史检索数据等等，会占用大量的大模型上下文，影响智能体做规划的性能。人们可以通过哪些手段来缓解这方面的压力？",
         "options": [
             "引入上下文感知的动态记忆机制，优先保留关键信息。",
@@ -4585,7 +4594,7 @@ window.QUESTIONS = [
     {
         "id": 346,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在设计大模型提示词时，以下哪项原则最重要？",
         "options": [
             "简洁明确",
@@ -4598,7 +4607,7 @@ window.QUESTIONS = [
     {
         "id": 347,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在大模型安全治理中，如何识别和避免对用户输入的非法查询进行响应？",
         "options": [
             "增加训练数据量",
@@ -4611,7 +4620,7 @@ window.QUESTIONS = [
     {
         "id": 348,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在进行大模型微调项目调研和业务可行性研究阶段，以下哪个角色对项目的成功尤为关键？",
         "options": [
             "数据工程师，负责数据预处理和清洗",
@@ -4624,7 +4633,7 @@ window.QUESTIONS = [
     {
         "id": 349,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在合规与数据安全方面，以下哪项措施对于保护敏感数据在微调过程中不被泄露不是必要的？",
         "options": [
             "对数据集进行去标识化处理，移除个人可识别信息",
@@ -4637,7 +4646,7 @@ window.QUESTIONS = [
     {
         "id": 350,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在大模型应用系统成本优化方面，如何有效利用不同规模的语言模型 (LLMs） 以实现资源高效分配？",
         "options": [
             "为所有任务统一使用最大规模的LLM以保证最佳性能",
@@ -4650,7 +4659,7 @@ window.QUESTIONS = [
     {
         "id": 351,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在大模型应用系统中，为了缓解有限长上下文问题，下列哪项措施不是通常采用的方法？",
         "options": [
             "实施对话历史的动态压缩技术",
@@ -4663,7 +4672,7 @@ window.QUESTIONS = [
     {
         "id": 352,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在准备业务领域相关数据集时，以下哪项做法可能导致模型微调效果不佳？",
         "options": [
             "精心筛选与应用场景高度相关的样本",
@@ -4676,7 +4685,7 @@ window.QUESTIONS = [
     {
         "id": 353,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "假设我们开发了一款基于多智能体协作的软件公司应用，可以实现多智能体协作帮用户写应用软件的能力。为了衡量系统遵循用户需求开发软件的实际能力，我们想设计一套评测体系。以下哪个选项不是构建该评测体系的关键考虑因素？",
         "options": [
             "用户体验的主观感受量化方法，如通过情感分析评估交互满意度",
@@ -4689,7 +4698,7 @@ window.QUESTIONS = [
     {
         "id": 354,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在使用大型语言模型之前，用户首先应该做什么？",
         "options": [
             "直接开始使用模型",
@@ -4702,7 +4711,7 @@ window.QUESTIONS = [
     {
         "id": 355,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "小明创建了一个基于他们公司内部制度文件的RAG应用，他以下的哪些问题可能得不到正确答案？",
         "options": [
             "如果我要请病假，工资是怎么扣的？",
@@ -4715,7 +4724,7 @@ window.QUESTIONS = [
     {
         "id": 356,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在下列描述中，哪一个不是斯坦福小镇项目的特点？",
         "options": [
             "虚拟小镇中的人是智能体，在形式上他们可以规划自己的一天的主要日程。",
@@ -4728,7 +4737,7 @@ window.QUESTIONS = [
     {
         "id": 357,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在LLM提示词中进行分配角色，以下哪项不是模型输出的特点？",
         "options": [
             "从角色视角完成任务",
@@ -4741,7 +4750,7 @@ window.QUESTIONS = [
     {
         "id": 358,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "利用大模型处理文本时，如果需要模型理解并回应与当前时间相关的问题，最可能用到的插件是？",
         "options": [
             "代码审查插件",
@@ -4754,7 +4763,7 @@ window.QUESTIONS = [
     {
         "id": 359,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在百炼中开启图像生成服务插件后，用户如何与大模型互动来获取图片？",
         "options": [
             "用户必须提供完整的图片URL",
@@ -4767,7 +4776,7 @@ window.QUESTIONS = [
     {
         "id": 360,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在LLM提示词中，思维链技术与标准提示相比，主要优势是什么？",
         "options": [
             "更快的响速度",
@@ -4780,7 +4789,7 @@ window.QUESTIONS = [
     {
         "id": 361,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "下列哪个场景最能体现多模态协同学习的优势？",
         "options": [
             "单纯的文本情感分析任务",
@@ -4793,7 +4802,7 @@ window.QUESTIONS = [
     {
         "id": 362,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大模型如通义千问API在自动处理文本任务时，主要优势在于：",
         "options": [
             "需要大量人工预先编程每个细节",
@@ -4806,7 +4815,7 @@ window.QUESTIONS = [
     {
         "id": 363,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大模型应用中处理个人信息的人员变更时，以下哪个选项是要首先执行的？",
         "options": [
             "重新取得用户同意",
@@ -4819,7 +4828,7 @@ window.QUESTIONS = [
     {
         "id": 364,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "Qwen系列模型中，哪个模型代表了经过大规模数据预训练后的基础版本，未针对特定任务进行过多调整？",
         "options": [
             "Qwen-7B-Chat",
@@ -4832,7 +4841,7 @@ window.QUESTIONS = [
     {
         "id": 365,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "多Agent系统，就是让机器模拟或利用多个Al实例，来协作解决问题。设计巧妙的Agent之间共享信息的方法，往往能提升多Agent系统的搜索效率。在一个多Agent搜救场景中，若要最大化搜索效率，以下哪种策略最不合理？",
         "options": [
             "根据已探索区域的信息动态调整各Agent的搜索路径",
@@ -4845,7 +4854,7 @@ window.QUESTIONS = [
     {
         "id": 366,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大型语言模型中，为什么需要对模型生成的内容进行检查？",
         "options": [
             "为了确保内容的多样性",
@@ -4858,7 +4867,7 @@ window.QUESTIONS = [
     {
         "id": 367,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪项技术是通过从更广泛的数据源获取信息以补充知识库不足的？",
         "options": [
             "Sentence Sliding Window（句子滑窗）",
@@ -4871,7 +4880,7 @@ window.QUESTIONS = [
     {
         "id": 368,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在编写LLM提示词时，下列哪项原则是正确的？",
         "options": [
             "提示词应尽可能详细，包含所有可能的上下文信息",
@@ -4884,7 +4893,7 @@ window.QUESTIONS = [
     {
         "id": 369,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在通信实时性要求极高的场景中，直接通信往往效率更高，以下哪个通讯方式的效率较低？",
         "options": [
             "直接通信，即Agent间直接交换信息",
@@ -4897,7 +4906,7 @@ window.QUESTIONS = [
     {
         "id": 370,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "关于LLM少样本提示（Few-Shot Prompting）的主要局限性之一是？",
         "options": [
             "需要大量的样本数据",
@@ -4910,7 +4919,7 @@ window.QUESTIONS = [
     {
         "id": 371,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在批量处理上万个问卷的过程中，大模型API相比传统的人工处理方式，最大的优势是什么？",
         "options": [
             "处理速度慢，但准确率极高",
@@ -4923,7 +4932,7 @@ window.QUESTIONS = [
     {
         "id": 372,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在大模型的使用过程中，以下哪项属于其主要的安全合规风险？",
         "options": [
             "个人信息风险",
@@ -4936,7 +4945,7 @@ window.QUESTIONS = [
     {
         "id": 373,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在使用LLM的何种场景下，思维链技术能发挥最大的用处？",
         "options": [
             "简单的问答任务，如“今天天气如何？”",
@@ -4949,7 +4958,7 @@ window.QUESTIONS = [
     {
         "id": 374,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "你觉得提示词模板怎么设计效果最好？假设chunk为召回的知识库文本块，query为用户问题。",
         "options": [
             "请回答：{query}",
@@ -4962,7 +4971,7 @@ window.QUESTIONS = [
     {
         "id": 375,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "微软AutoGen项目设计了多智能体对话框架，并允许人类用户参与对话讨论，这种交互特性有什么优势？",
         "options": [
             "研究智能体间的社会关系",
@@ -4975,7 +4984,7 @@ window.QUESTIONS = [
     {
         "id": 376,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "一家新创公司计划开发一个创新的智能助手应用，该应用需要能够与用户自然地交流并理解多种类型的输入数据。若该公司只能选择一种技术作为其核心功能的基础，以下哪项技术最合适作为这个智能助手的基础？",
         "options": [
             "计算机视觉模型，因为这能让智能助手解析和理解用户提供的视觉信息，这是用户交流的主要方式",
@@ -4988,7 +4997,7 @@ window.QUESTIONS = [
     {
         "id": 377,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "多模态转化任务的一个实例是？",
         "options": [
             "通过文本描述生成匹配的图像内容",
@@ -5001,7 +5010,7 @@ window.QUESTIONS = [
     {
         "id": 378,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在使用通义千问 API 自动完成文本处理任务时，哪种方式能够批量处理上万个调查问卷？",
         "options": [
             "手工处理",
@@ -5014,7 +5023,7 @@ window.QUESTIONS = [
     {
         "id": 379,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "增强大模型能力的插件通常是通过什么方式与大模型集成的？",
         "options": [
             "直接修改大模型源代码",
@@ -5027,7 +5036,7 @@ window.QUESTIONS = [
     {
         "id": 380,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "零样本提示 (Zero-Shot Prompt）允许模型在没有见过特定任务或数据集的情况下完成新任务，这主要归功于以下哪一个选项？",
         "options": [
             "预训练",
@@ -5040,7 +5049,7 @@ window.QUESTIONS = [
     {
         "id": 381,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在多模态协同学习框架下，不同模态的数据如何协作以提升学习效果？",
         "options": [
             "通过独立学习各自模态的特征后直接合并",
@@ -5053,7 +5062,7 @@ window.QUESTIONS = [
     {
         "id": 382,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "多模态学习的核心目标之一是实现不同模态数据间的有效整合。以下哪个步骤不属于典型的多模态学习处理流程？",
         "options": [
             "多模态表征学习",
@@ -5066,7 +5075,7 @@ window.QUESTIONS = [
     {
         "id": 383,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "准备业务领域相关数据集时，以下哪个步骤对于确保微调效果至关重要？",
         "options": [
             "对数据进行无偏见的随机排序",
@@ -5079,7 +5088,7 @@ window.QUESTIONS = [
     {
         "id": 384,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下关于预训练的描述中，错误的是？",
         "options": [
             "在预训练阶段，模型通过学习大量不同种类的语料，从而掌握语言的统计规律和一般知识",
@@ -5092,7 +5101,7 @@ window.QUESTIONS = [
     {
         "id": 385,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下关于大模型推理过程的描述中，正确的是？",
         "options": [
             "这是模型学习新知识和技能的过程",
@@ -5105,7 +5114,7 @@ window.QUESTIONS = [
     {
         "id": 386,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "人工智能按照技术实现的不同可被划分为多个子领域。以下描述错误的是？",
         "options": [
             "机器学习和深度学习是各自独立的分支，主要差别在于使用了不同的模型",
@@ -5118,7 +5127,7 @@ window.QUESTIONS = [
     {
         "id": 387,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在斯坦福小镇多智能体社区研究项目中，智能体间的主要互动模式是什么？",
         "options": [
             "所有智能体同时参与的大会讨论",
@@ -5131,7 +5140,7 @@ window.QUESTIONS = [
     {
         "id": 388,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "开启代码解释器插件后，大模型能够直接实现什么操作？",
         "options": [
             "仅提供代码编写建议",
@@ -5144,7 +5153,7 @@ window.QUESTIONS = [
     {
         "id": 389,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "多模态应用",
         "question": "以下哪项不属于通义千问Qwen-VL-Max的能力？",
         "options": [
             "识别图像中的物体并进行描述",
@@ -5157,7 +5166,7 @@ window.QUESTIONS = [
     {
         "id": 390,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "多Agent系统通过模拟或利用多个交互的智能体 （Agents）来解决复杂问题，具有分布性、适应性、动态性的特点。以下哪个场景适合采用多Agent系统？",
         "options": [
             "单一目标的持续追踪任务",
@@ -5170,7 +5179,7 @@ window.QUESTIONS = [
     {
         "id": 391,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "哪一种微调方法不仅根据特定任务的数据调整模型，还会通过人类反馈对模型的回答进行奖动或惩罚，从而优化生成的对话质量？",
         "options": [
             "预训练",
@@ -5183,7 +5192,7 @@ window.QUESTIONS = [
     {
         "id": 392,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "通义听悟主要聚焦于哪种类型的数据处理能力？",
         "options": [
             "将图像转换为高质量的视频内容",
@@ -5196,7 +5205,7 @@ window.QUESTIONS = [
     {
         "id": 393,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "自然语言处理(NLP)任务中，为什么需要对文本进行分词化？",
         "options": [
             "分词化是为了加强文本加密，保证数据传输的安全性",
@@ -5209,7 +5218,7 @@ window.QUESTIONS = [
     {
         "id": 394,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "多Agent系统通过模拟或利用多个交互的智能体 (Agents）来解决复杂问题。如果在一个复杂的金融交易市场模拟中，使用多Agent系统的优势不包括：",
         "options": [
             "能够模拟多个投资者的独立决策过程，增加市场仿真度",
@@ -5222,7 +5231,7 @@ window.QUESTIONS = [
     {
         "id": 395,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "代码解释器插件的主要作用是什么？",
         "options": [
             "帮助大模型理解人类的自然语言命令",
@@ -5235,7 +5244,7 @@ window.QUESTIONS = [
     {
         "id": 396,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下哪一项最淮确地描述了预训练大模型在处理特定问题时可能遇到的局限性？",
         "options": [
             "预训练的大模型能够准确理解并回答所有类型的问题，因为它已经学习了广泛的语料库",
@@ -5248,7 +5257,7 @@ window.QUESTIONS = [
     {
         "id": 397,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪种方式不符合“优化RAG过程”的最佳实践？",
         "options": [
             "使用DashScope Parse解析文档,提取文本和图片信息",
@@ -5261,7 +5270,7 @@ window.QUESTIONS = [
     {
         "id": 398,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪个任务最适合使用大语言模型?",
         "options": [
             "计算一组数据的标准差",
@@ -5274,7 +5283,7 @@ window.QUESTIONS = [
     {
         "id": 399,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下选项中，不属于RAG工作流程中“建立索引”阶段的步骤的是哪一项？",
         "options": [
             "将文档解析为纯文本",
@@ -5287,7 +5296,7 @@ window.QUESTIONS = [
     {
         "id": 400,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG系统中，将文档拆分成多个分块 (chunks) 的主要目的是什么?",
         "options": [
             "减小存储空间,提高检索效率",
@@ -5300,7 +5309,7 @@ window.QUESTIONS = [
     {
         "id": 401,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪种方式可以更好地处理大语言模型返回结果中可能存在的错误或异常?",
         "options": [
             "不处理,直接使用返回结果",
@@ -5313,7 +5322,7 @@ window.QUESTIONS = [
     {
         "id": 402,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "如果让大语言模型输出意图分类置信度，但我们发现大语言模型意图分类结果的置信度普遍较低，应该如何处理？",
         "options": [
             "直接忽略置信度,使用预测结果",
@@ -5326,7 +5335,7 @@ window.QUESTIONS = [
     {
         "id": 403,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在微调大语言模型前的数据准备中，为何需要进行文本分词或标记化处理?",
         "options": [
             "降低模型训练成本",
@@ -5339,7 +5348,7 @@ window.QUESTIONS = [
     {
         "id": 404,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪个用户查询语句无法有效地指导大语言模型进行文本摘要?",
         "options": [
             "请总结以下文章的主要内容:",
@@ -5353,7 +5362,7 @@ window.QUESTIONS = [
     {
         "id": 405,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "根据“Multi - Agent”的思根，对于复杂的RAG任务，最适合通过以下哪种方式进行处理？",
         "options": [
             "将所有任务步骤整合到一个大型prompt中,一次调用大模型完成所有处理",
@@ -5366,7 +5375,7 @@ window.QUESTIONS = [
     {
         "id": 406,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "假设system提示词已经定义了大语言模型的角色为“一个专业的写作助手”。以下哪个用户查询语句最适合用于指导大语言模型扩写一段关于太空旅行的文字？",
         "options": [
             "太空旅行很酷.",
@@ -5380,7 +5389,7 @@ window.QUESTIONS = [
     {
         "id": 407,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "当你在工作中使用大语言模型(如：Qwen - Max)优化录音稿时，应该优先考虑的目标是什么?",
         "options": [
             "提高文本的口语化程度,便于录音和听众理解",
@@ -5393,7 +5402,7 @@ window.QUESTIONS = [
     {
         "id": 408,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "以下哪个RAG应用场景最适合使用规则匹配的文本合规检测?",
         "options": [
             "识别文章中蕴含的复杂情感",
@@ -5406,7 +5415,7 @@ window.QUESTIONS = [
     {
         "id": 409,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在微调大语言模型的数据预处理流程中，哪一步骤旨在减少文本中的噪声，提高数据质量?",
         "options": [
             "文本清洗",
@@ -5419,7 +5428,7 @@ window.QUESTIONS = [
     {
         "id": 410,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在利用大语言模型开发RAG应用时，以下哪种方法不属于常见的文档切片方法?",
         "options": [
             "按字符分割",
@@ -5432,7 +5441,7 @@ window.QUESTIONS = [
     {
         "id": 411,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下哪种说法最能体现RAG的核心思想?",
         "options": [
             "RAG是一种利用大语言模型直接生成最终答案的技术",
@@ -5445,7 +5454,7 @@ window.QUESTIONS = [
     {
         "id": 412,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在通过大语言模型进行文档审阅时，不建议一次输出所有的结果，以下选项中最可能的原因是哪一项？",
         "options": [
             "信息量过大导致大模型难以理解",
@@ -5458,7 +5467,7 @@ window.QUESTIONS = [
     {
         "id": 413,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪个代码片段正确设置了百炼大语言模型的API Key?",
         "options": [
             "client = OpenAI(base_url=\"https://dashscope.aliyuncs.com/compatible-mode/v1\")",
@@ -5471,7 +5480,7 @@ window.QUESTIONS = [
     {
         "id": 414,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "我们可以使用比较成熟的RAG应用测试框架Ragas来评估RAG应用的效果，Ragas包含了多种评测指标，其中faithfulness、answer_relevancy、context_recall、context_precision指标中，哪个指标仅评估生成阶段的性能?",
         "options": [
             "faithfulness",
@@ -5484,7 +5493,7 @@ window.QUESTIONS = [
     {
         "id": 415,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下代码片段旨在模拟RAG应用的向量检索过程。哪一行代码实现了计算用户问题向量与文档向量相似度的功能?",
         "options": [
             "import numpy as np",
@@ -5497,7 +5506,7 @@ window.QUESTIONS = [
     {
         "id": 416,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG系统中，以下哪种情况最适合将文档拆分成更小的分块?",
         "options": [
             "文档内容非常简短,总共只有几句话",
@@ -5510,7 +5519,7 @@ window.QUESTIONS = [
     {
         "id": 417,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在大语言模型RAG应用的基本工作流程中，以下哪一项可以提高检索的效率?",
         "options": [
             "增加embedding的堆度",
@@ -5523,7 +5532,7 @@ window.QUESTIONS = [
     {
         "id": 418,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "微调大语言模型的基本步骤不包括以下哪一项?",
         "options": [
             "选择或设计特定任务的数据集",
@@ -5536,7 +5545,7 @@ window.QUESTIONS = [
     {
         "id": 419,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "下列Assistant API示例代码中，verify_status_code函数的作用是什么?",
         "options": [
             "验证用户输入的query是否合法",
@@ -5551,7 +5560,7 @@ window.QUESTIONS = [
     {
         "id": 420,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在大语言模型RAG应用的基本工作流程中，如何将用户问题和检索到的相关文档块提交给大语言模型?",
         "options": [
             "将用户问题和文档块直接拼接成一个长字符串提交",
@@ -5564,7 +5573,7 @@ window.QUESTIONS = [
     {
         "id": 421,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建RAG应用时，以下关于句子滑窗检索的优势描述正确的是哪一项?",
         "options": [
             "提高大模型生成的速度",
@@ -5577,7 +5586,7 @@ window.QUESTIONS = [
     {
         "id": 422,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪种方法最适合用于解析PDF和Word文档中的文本内容，以便进行后续的RAG处理?",
         "options": [
             "使用正则表达式直接提取文本",
@@ -5590,7 +5599,7 @@ window.QUESTIONS = [
     {
         "id": 423,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下代码片段中，StorageContext的作用是什么?",
         "options": [
             "创建新的索引",
@@ -5603,7 +5612,7 @@ window.QUESTIONS = [
     {
         "id": 424,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在构建大语言模型提示词过程中，以下哪个分隔符形式不常用于提示词中?",
         "options": [
             "---",
@@ -5617,7 +5626,7 @@ window.QUESTIONS = [
     {
         "id": 425,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "通过LlamaIndex创建RAG应用时，编写了如下代码，这段代码中，如何修改召回文本段的个数?",
         "options": [
             "from_documents[similarity_top_k] as_query_engine(similarity_top_k)",
@@ -5631,7 +5640,7 @@ window.QUESTIONS = [
     {
         "id": 426,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "通过LamaIndex创建RAG应用时，一份知识文件传入RAG应用的顺序是以下哪一项?",
         "options": [
             "Node对象 - Document对象 - index - query_engine",
@@ -5644,7 +5653,7 @@ window.QUESTIONS = [
     {
         "id": 427,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "下列选项中，哪一项最符合大语言模型微调的主要目的?",
         "options": [
             "提升模型的泛化能力",
@@ -5657,7 +5666,7 @@ window.QUESTIONS = [
     {
         "id": 428,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "大语言模型微调时，通过调节哪个参数可以直接控制模型学习新知识的速度?",
         "options": [
             "批大小",
@@ -5670,7 +5679,7 @@ window.QUESTIONS = [
     {
         "id": 429,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "以下哪个代码片段最适合帮助RAG应用将文本片段转换为向量表示?",
         "options": [
             "import numpy as np",
@@ -5683,7 +5692,7 @@ window.QUESTIONS = [
     {
         "id": 430,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "通过LamaIndex创建RAG应用时，node_postprocessors的作用是?",
         "options": [
             "进行后处理,如相似度阈值、rerank等",
@@ -5696,7 +5705,7 @@ window.QUESTIONS = [
     {
         "id": 431,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在微调大语言模型的过程中，什么是用来衡量模型在每个训练批次上表现的一个标准?",
         "options": [
             "准确率",
@@ -5709,7 +5718,7 @@ window.QUESTIONS = [
     {
         "id": 432,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在调用大语言模型对话的API过程中，如果要修改生成摘要的函数，使其生成的摘要不超过80个字，应该如何修改?",
         "options": [
             "在提示词部分明确写出摘要本身的内容不超过80个字",
@@ -5722,7 +5731,7 @@ window.QUESTIONS = [
     {
         "id": 433,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在使用大语言模型 (如：Qwen - Turbo) 对课程内容进行初步翻译时，以下哪一项是必须的?",
         "options": [
             "提供明确的系统消息和翻译任务提示",
@@ -5735,7 +5744,7 @@ window.QUESTIONS = [
     {
         "id": 434,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "大语言模型RAG应用建立索引阶段需要先对文本进行切片，以下哪种文本切片方法最有可能保留完整的语义信息?",
         "options": [
             "按字符数分割,每50个字符为一个chunk",
@@ -5748,7 +5757,7 @@ window.QUESTIONS = [
     {
         "id": 435,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "RAG应用在处理表格数据时，下列哪种方法能更好地保留表格的语义信息并方便后续查询?",
         "options": [
             "将表格转换为纯文本",
@@ -5761,7 +5770,7 @@ window.QUESTIONS = [
     {
         "id": 436,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在开发基于大语言模型的RAG应用过程中，下哪种做法不能保证“关键数据的语义独立性与完整性”?",
         "options": [
             "将标题下的所有文本合成一个段落",
@@ -5774,7 +5783,7 @@ window.QUESTIONS = [
     {
         "id": 437,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在设定大语言模型的训练参数时，哪个参数可以影响模型每次迭代中同时处理的数据量，并间接影响到模型收敛速度和内存使用?",
         "options": [
             "学习率",
@@ -5787,7 +5796,7 @@ window.QUESTIONS = [
     {
         "id": 438,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在使用Assistant API创建一个Assistant实例时，下列哪个参数用于指定使用的模型?",
         "options": [
             "model",
@@ -5800,7 +5809,7 @@ window.QUESTIONS = [
     {
         "id": 439,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在借助Llamaindex构建问答机器人过程中，如果存储目录不存在，应使用哪个类来读取文档并创建索引?",
         "options": [
             "VectorStoreIndex",
@@ -5813,7 +5822,7 @@ window.QUESTIONS = [
     {
         "id": 440,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "下列哪一项不属于大语言模型微调可能带来的挑战?",
         "options": [
             "过拟合特定任务,泛化能力下降",
@@ -5826,7 +5835,7 @@ window.QUESTIONS = [
     {
         "id": 441,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "RAG应用的文本合规检查过程中，使用规则匹配方法的主要缺点是什么?",
         "options": [
             "计算复杂度高,处理速度慢",
@@ -5839,7 +5848,7 @@ window.QUESTIONS = [
     {
         "id": 442,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在下列哪项任务中，大语言模型可能不是最佳工具选择?",
         "options": [
             "自动为新闻文章分配合适的标签类别",
@@ -5852,7 +5861,7 @@ window.QUESTIONS = [
     {
         "id": 443,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在调用大语言模型对话的API过程中，以下哪个代码片段展示了正确的用户(user)提问方式?",
         "options": [
             "messages = [{\"role\": \"assistant\", \"content\": \"你是一个诗歌生成器.\"}, {\"role\": \"user\", \"content\": \"请告诉我你想写一首关于什么的诗.\"}]",
@@ -5865,7 +5874,7 @@ window.QUESTIONS = [
     {
         "id": 444,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "以下哪种方式不符合“Multi - Agent”的处理思想?",
         "options": [
             "使用DashScope Parse解析文档结构,再使用通义千向API润色文本",
@@ -5878,7 +5887,7 @@ window.QUESTIONS = [
     {
         "id": 445,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在下列使用Qwen - Max辅助内容生产的场景中，以下哪个操作是可以执行的?",
         "options": [
             "直接使用Qwen - Max进行图像设计",
@@ -5891,7 +5900,7 @@ window.QUESTIONS = [
     {
         "id": 446,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "以下描述中哪一项不属于通过多智能体进行文档质量检测的优势?",
         "options": [
             "可以更专业地针对每种错误类型进行检测",
@@ -5904,7 +5913,7 @@ window.QUESTIONS = [
     {
         "id": 447,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "大语言模型中的top_P参数的主要作用是什么?",
         "options": [
             "控制模型生成文本的长度",
@@ -5917,7 +5926,7 @@ window.QUESTIONS = [
     {
         "id": 448,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪行代码能够正确调用百炼\"qwen-max\"模型进行对话补全?",
         "options": [
             "completion = client.chat.create(model=\"qwen-max\", messages=[{\"role\": \"user\", \"content\": \"你好\"}])",
@@ -5930,7 +5939,7 @@ window.QUESTIONS = [
     {
         "id": 449,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "你正在使用大语言模型逐条输出检测结果。以下哪种数据结构最适合存储和处理这些结果？",
         "options": [
             "字符串",
@@ -5943,7 +5952,7 @@ window.QUESTIONS = [
     {
         "id": 450,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "下列描述中，最符合大语言模型预训练与微调之间关系的是哪一项?",
         "options": [
             "微调是预训练模型过程中的初次训练",
@@ -5956,7 +5965,7 @@ window.QUESTIONS = [
     {
         "id": 451,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在通过大语言模型检测文档内容中是否存在营销表达时，下列哪种方法可以更全面地识别问题？",
         "options": [
             "一次性生成所有类型的识别结果",
@@ -5969,7 +5978,7 @@ window.QUESTIONS = [
     {
         "id": 452,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建大语言模型RAG应用过程中，向量数据库的主要作用是什么?",
         "options": [
             "存储和管理大量的图像数据",
@@ -5982,7 +5991,7 @@ window.QUESTIONS = [
     {
         "id": 453,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "检查以下代码，如果需要添加一个新的意图类别，例如“入职流程”，需要修改哪一部分代码？",
         "options": [
             "只需要修改输入的用户query列表",
@@ -5995,7 +6004,7 @@ window.QUESTIONS = [
     {
         "id": 454,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在调用大语言模型对话的API过程中，以下哪个代码片段正确地使用了system角色来指示模型扮演一个友好的客服代表?",
         "options": [
             "messages = [{\"role\": \"system\", \"content\": \"我想咨询一下退货流程.\"}]",
@@ -6008,7 +6017,7 @@ window.QUESTIONS = [
     {
         "id": 455,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "小李作为某RAG智能答疑机器人应用的负责人，发现机器人输出的内容包含不安全信息，以下哪种做法是最不推荐的?",
         "options": [
             "过滤掉不安全信息,返回剩余安全内容",
@@ -6021,7 +6030,7 @@ window.QUESTIONS = [
     {
         "id": 456,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在开发大语言模型RAG应用过程中，以下哪种情况适合使用视觉模型进行深层次解析？",
         "options": [
             "包含简单文字的命令行截图",
@@ -6034,7 +6043,7 @@ window.QUESTIONS = [
     {
         "id": 457,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在Llamaindex中，默认情况下，加载的数据是如何存储的?",
         "options": [
             "存储在云服务中",
@@ -6047,7 +6056,7 @@ window.QUESTIONS = [
     {
         "id": 458,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "相较于从头全新训练一个模型，下列对大语言模型微调的描述中正确的是哪一项?",
         "options": [
             "需要更多计算资源以及更多的时间成本",
@@ -6060,7 +6069,7 @@ window.QUESTIONS = [
     {
         "id": 459,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "下列Assistant API示例代码中，forward_and_submit_outputs函数的核心功能是什么?",
         "options": [
             "创建新的Assistant",
@@ -6075,7 +6084,7 @@ window.QUESTIONS = [
     {
         "id": 460,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "如果将调用大语言模型的参数temperature参数设置为0，模型的生成结果会有什么特点?",
         "options": [
             "生成结果更加随机",
@@ -6088,7 +6097,7 @@ window.QUESTIONS = [
     {
         "id": 461,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在调用大语言模型对话的API过程中，以下哪个代码片段正确地展示了system、user和assistant三种角色的交互顺序？",
         "options": [
             "messages = [{\"role\": \"assistant\", \"content\": \"你好\"}, {\"role\": \"user\", \"content\": \"我想订一张机票\"}, {\"role\": \"system\", \"content\": \"你是一个订票助手\"}]",
@@ -6101,7 +6110,7 @@ window.QUESTIONS = [
     {
         "id": 462,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在多模态场景下，用户向基于RAG的智能答疑机器人提交报销申请，以下哪种情况不需要进行内容安全合规检查?",
         "options": [
             "用户提交的文本描述",
@@ -6114,7 +6123,7 @@ window.QUESTIONS = [
     {
         "id": 463,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪个代码片段最能体现大语言模型的优势？",
         "options": [
             "import numpy as np  date=[1,2,3,4,5,100]  std_dev=np.std(data)",
@@ -6127,7 +6136,7 @@ window.QUESTIONS = [
     {
         "id": 464,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "关于如下代码的解释中，正确的是哪一项?",
         "options": [
             "基于已有thread创建运行任务,使用流式输出",
@@ -6140,7 +6149,7 @@ window.QUESTIONS = [
     {
         "id": 465,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "小王开发了一个AI音乐创作工具，在用户协议中声明对用户使用该工具创作的音乐作品享有所有权。这种做法是否合规？",
         "options": [
             "合规,开发者有权决定作品的版权归属",
@@ -6154,7 +6163,7 @@ window.QUESTIONS = [
     {
         "id": 466,
         "type": "single",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在使用大模型提炼图文课程内容时，以下哪些指导原则是正确的？",
         "options": [
             "提炼关键信息,避免冗长段落",
@@ -6168,7 +6177,7 @@ window.QUESTIONS = [
     {
         "id": 467,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的以下哪些指标用于评估生成环节？",
         "options": [
             "Answer Relevancy",
@@ -6185,7 +6194,7 @@ window.QUESTIONS = [
     {
         "id": 468,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法用于在检索后减少无关信息？",
         "options": [
             "重排序",
@@ -6202,7 +6211,7 @@ window.QUESTIONS = [
     {
         "id": 469,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "temperature参数如何影响候选Token的概率分布？",
         "options": [
             "低温度增加高概率Token的选择",
@@ -6219,7 +6228,7 @@ window.QUESTIONS = [
     {
         "id": 470,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下关于temperature参数的描述，哪些是正确的？",
         "options": [
             "温度值越低，输出结果越固定",
@@ -6236,7 +6245,7 @@ window.QUESTIONS = [
     {
         "id": 471,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，以下哪些是提示词中规定的输出要求？",
         "options": [
             "输出JSON格式",
@@ -6255,7 +6264,7 @@ window.QUESTIONS = [
     {
         "id": 472,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大模型的问答工作流程中，以下哪些阶段涉及模型的推理过程？",
         "options": [
             "Token向量化",
@@ -6272,7 +6281,7 @@ window.QUESTIONS = [
     {
         "id": 473,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪些是事实准确度的比较对象？",
         "options": [
             "answer 的观点列表",
@@ -6289,7 +6298,7 @@ window.QUESTIONS = [
     {
         "id": 474,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 Ragas 中，以下哪些指标用于评估检索召回效果？",
         "options": [
             "context precision",
@@ -6306,7 +6315,7 @@ window.QUESTIONS = [
     {
         "id": 475,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，以下哪些步骤是必要的？",
         "options": [
             "使用大模型将用户问题改写为新的query",
@@ -6323,7 +6332,7 @@ window.QUESTIONS = [
     {
         "id": 476,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在自定义提示词模板中，以下哪些是预设的部分信息？",
         "options": [
             "大模型的角色",
@@ -6340,7 +6349,7 @@ window.QUESTIONS = [
     {
         "id": 477,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context precision 的计算过程中，以下哪些是判断 contexti 是否相关的依据？",
         "options": [
             "question",
@@ -6357,7 +6366,7 @@ window.QUESTIONS = [
     {
         "id": 478,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化 answer correctness 指标时，以下哪些措施是可行的？",
         "options": [
             "优化 prompt",
@@ -6376,7 +6385,7 @@ window.QUESTIONS = [
     {
         "id": 479,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的检索与生成阶段，主要优势包括哪些？",
         "options": [
             "提高大模型输出的准确性",
@@ -6393,7 +6402,7 @@ window.QUESTIONS = [
     {
         "id": 480,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "如果你的业务流程比较复杂，可以借助百炼上的哪些工具来构建更强大的应用？",
         "options": [
             "可视化工作流",
@@ -6410,7 +6419,7 @@ window.QUESTIONS = [
     {
         "id": 481,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化后的答疑机器人中，以下哪些是提示词中规定的任务要求？",
         "options": [
             "文档纠错专家需要言简意赅的回复",
@@ -6427,7 +6436,7 @@ window.QUESTIONS = [
     {
         "id": 482,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "以下哪些方法可以让大模型能够回答私域知识问题？",
         "options": [
             "微调模型",
@@ -6445,7 +6454,7 @@ window.QUESTIONS = [
     {
         "id": 483,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，以下哪些要素可以用于明确输出的格式？",
         "options": [
             "输出格式（Output Format）",
@@ -6462,7 +6471,7 @@ window.QUESTIONS = [
     {
         "id": 484,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "GraphRAG 技术的优势包括哪些？",
         "options": [
             "准确回答具体问题",
@@ -6479,7 +6488,7 @@ window.QUESTIONS = [
     {
         "id": 485,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在构建 RAG 应用时，大模型可以用于哪些其他应用场景？",
         "options": [
             "识别用户意图",
@@ -6496,7 +6505,7 @@ window.QUESTIONS = [
     {
         "id": 486,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在ask_llm_route函数中，以下哪些是可能的输出？",
         "options": [
             "文档审查结果",
@@ -6515,7 +6524,7 @@ window.QUESTIONS = [
     {
         "id": 487,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在提取标签的过程中，以下哪些标签类型是支持的？",
         "options": [
             "人名",
@@ -6536,7 +6545,7 @@ window.QUESTIONS = [
     {
         "id": 488,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化后的答疑机器人中，以下哪些是可能的处理流程？",
         "options": [
             "使用reviewed_prompt进行文档审查",
@@ -6555,7 +6564,7 @@ window.QUESTIONS = [
     {
         "id": 489,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，哪些操作有助于生成更具确定性的文本？",
         "options": [
             "降低temperature值",
@@ -6572,7 +6581,7 @@ window.QUESTIONS = [
     {
         "id": 490,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context recall 的计算过程中，以下哪些步骤是必要的？",
         "options": [
             "由大模型将 ground_trut分解成观点列表",
@@ -6589,7 +6598,7 @@ window.QUESTIONS = [
     {
         "id": 491,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在以下代码片段中，哪些操作有助于提高检索的准确性？",
         "options": [
             "设置较大的召回切片数量",
@@ -6607,7 +6616,7 @@ window.QUESTIONS = [
     {
         "id": 492,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在构建有效的提示词时，以下哪些是清晰表达需求的关键要素？",
         "options": [
             "任务目标",
@@ -6624,7 +6633,7 @@ window.QUESTIONS = [
     {
         "id": 493,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪些方法用于在检索前还原用户真实意图？",
         "options": [
             "使用大模型扩充用户问题",
@@ -6642,7 +6651,7 @@ window.QUESTIONS = [
     {
         "id": 494,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "为了控制生成内容的随机性，以下哪些参数可以进行调整？",
         "options": [
             "temperature",
@@ -6659,7 +6668,7 @@ window.QUESTIONS = [
     {
         "id": 495,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "Ragas 提供的以下哪些指标用于评估召回阶段？",
         "options": [
             "Context Precision",
@@ -6676,7 +6685,7 @@ window.QUESTIONS = [
     {
         "id": 496,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档解析与切片阶段，以下哪些改进策略适用于文档切片长度过短的情况？",
         "options": [
             "扩大切片长度",
@@ -6693,7 +6702,7 @@ window.QUESTIONS = [
     {
         "id": 497,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在LlamaIndex的默认提示词模板中，以下哪些变量是必要的？",
         "options": [
             "context_str",
@@ -6710,7 +6719,7 @@ window.QUESTIONS = [
     {
         "id": 498,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在优化后的答疑机器人中，以下哪些是可能的输出？",
         "options": [
             "文档审查结果",
@@ -6729,7 +6738,7 @@ window.QUESTIONS = [
     {
         "id": 499,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在代码中，以下哪些是 OpenAILike 类的参数？",
         "options": [
             "model",
@@ -6748,7 +6757,7 @@ window.QUESTIONS = [
     {
         "id": 500,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，以下哪些方法可以用于改写用户问题？",
         "options": [
             "使用CondenseQuestionChatEngine",
@@ -6765,7 +6774,7 @@ window.QUESTIONS = [
     {
         "id": 501,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下关于top_p参数的描述，哪些是正确的？",
         "options": [
             "top_p值越大，生成内容越多样化",
@@ -6782,7 +6791,7 @@ window.QUESTIONS = [
     {
         "id": 502,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在保存与加载索引时，以下哪些方法被使用？",
         "options": [
             "index.storage_context.persist",
@@ -6799,7 +6808,7 @@ window.QUESTIONS = [
     {
         "id": 503,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪些是云服务向量存储的特点？",
         "options": [
             "无需关注运维",
@@ -6818,7 +6827,7 @@ window.QUESTIONS = [
     {
         "id": 504,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在构建 RAG 应用时，以下哪些是云服务向量存储的适用场景？",
         "options": [
             "生产环境",
@@ -6835,7 +6844,7 @@ window.QUESTIONS = [
     {
         "id": 505,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在示例中，以下哪些是知识库中召回的内容？",
         "options": [
             "内容研究与分析",
@@ -6852,7 +6861,7 @@ window.QUESTIONS = [
     {
         "id": 506,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在优化后的答疑机器人中，以下哪些是提示词中规定的角色背景？",
         "options": [
             "文档纠错专家",
@@ -6869,7 +6878,7 @@ window.QUESTIONS = [
     {
         "id": 507,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "安全与合规",
         "question": "在自定义提示词模板中，以下哪些是用于约束大模型行为的注意事项？",
         "options": [
             "根据上下文信息而非先验知识来回答问题",
@@ -6887,7 +6896,7 @@ window.QUESTIONS = [
     {
         "id": 508,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法用于在检索前还原用户真实意图？",
         "options": [
             "问题改写",
@@ -6906,7 +6915,7 @@ window.QUESTIONS = [
     {
         "id": 509,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在代码中，以下哪些是 index.as_query_engine 方法的参数？",
         "options": [
             "streaming",
@@ -6924,7 +6933,7 @@ window.QUESTIONS = [
     {
         "id": 510,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪些切片方法适合处理长文档且需要保持上下文？",
         "options": [
             "句子窗口切片",
@@ -6941,7 +6950,7 @@ window.QUESTIONS = [
     {
         "id": 511,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的多轮对话中，以下哪些因素可能影响检索系统的处理能力？",
         "options": [
             "长文本",
@@ -6958,7 +6967,7 @@ window.QUESTIONS = [
     {
         "id": 512,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪些模型被使用？",
         "options": [
             "大模型",
@@ -6975,7 +6984,7 @@ window.QUESTIONS = [
     {
         "id": 513,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪些场景适合设置较低的top_p值？",
         "options": [
             "新闻初稿",
@@ -6992,7 +7001,7 @@ window.QUESTIONS = [
     {
         "id": 514,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在提取标签的过程中，以下哪些场景是正确的？",
         "options": [
             "建立索引时，从文档切片中提取结构化标签",
@@ -7009,7 +7018,7 @@ window.QUESTIONS = [
     {
         "id": 515,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context recall 指标时，以下哪些措施是可行的？",
         "options": [
             "检查知识库",
@@ -7027,7 +7036,7 @@ window.QUESTIONS = [
     {
         "id": 516,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 compare_embeddings 函数的参数？",
         "options": [
             "query",
@@ -7045,7 +7054,7 @@ window.QUESTIONS = [
     {
         "id": 517,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "Agent智能体",
         "question": "在构建 RAG 应用时，哪些高级 RAG 课题值得探索？",
         "options": [
             "GraphRAG 技术",
@@ -7064,7 +7073,7 @@ window.QUESTIONS = [
     {
         "id": 518,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "在意图识别中，以下哪些方法可以帮助大模型进行意图识别？",
         "options": [
             "使用提示词",
@@ -7081,7 +7090,7 @@ window.QUESTIONS = [
     {
         "id": 519,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是更新的 Embedding 模型？",
         "options": [
             "text-embedding-v3",
@@ -7099,7 +7108,7 @@ window.QUESTIONS = [
     {
         "id": 520,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在自定义提示词模板中，以下哪些是用于处理用户问题的步骤？",
         "options": [
             "根据上下文信息回答问题",
@@ -7117,7 +7126,7 @@ window.QUESTIONS = [
     {
         "id": 521,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "RAG应用的主要组成部分包括哪些？",
         "options": [
             "建立索引阶段",
@@ -7134,7 +7143,7 @@ window.QUESTIONS = [
     {
         "id": 522,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，哪些参数可以影响生成文本的多样性？",
         "options": [
             "temperature",
@@ -7151,7 +7160,7 @@ window.QUESTIONS = [
     {
         "id": 523,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪些是大模型的作用？",
         "options": [
             "生成 answer 的观点列表",
@@ -7168,7 +7177,7 @@ window.QUESTIONS = [
     {
         "id": 524,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在大模型的问答工作流程中，以下哪些阶段涉及Token的处理？",
         "options": [
             "输入文本分词化",
@@ -7186,7 +7195,7 @@ window.QUESTIONS = [
     {
         "id": 525,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在示例中，以下哪些是提示词中规定的任务要求？",
         "options": [
             "审查文档中有没有错别字",
@@ -7204,7 +7213,7 @@ window.QUESTIONS = [
     {
         "id": 526,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中，以下哪些符号可以作为分隔符？",
         "options": [
             "【】",
@@ -7222,7 +7231,7 @@ window.QUESTIONS = [
     {
         "id": 527,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，以下哪些是提示词中规定的角色背景？",
         "options": [
             "文档纠错专家",
@@ -7239,7 +7248,7 @@ window.QUESTIONS = [
     {
         "id": 528,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context recall 指标时，以下哪些是使用大模型改写 query 的好处？",
         "options": [
             "提升召回的准确率",
@@ -7256,7 +7265,7 @@ window.QUESTIONS = [
     {
         "id": 529,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化检索效果时，以下哪些是 Markdown 格式的特点？",
         "options": [
             "结构清晰，层次分明",
@@ -7273,7 +7282,7 @@ window.QUESTIONS = [
     {
         "id": 530,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是余弦相似度的计算方法？",
         "options": [
             "计算向量之间的夹角",
@@ -7290,7 +7299,7 @@ window.QUESTIONS = [
     {
         "id": 531,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在加载本地索引文件时，以下哪些参数可以设置？",
         "options": [
             "存储路径",
@@ -7308,7 +7317,7 @@ window.QUESTIONS = [
     {
         "id": 532,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在切片向量化与存储阶段，以下哪些是 compare_embedding_models 函数的参数？",
         "options": [
             "documents",
@@ -7327,7 +7336,7 @@ window.QUESTIONS = [
     {
         "id": 533,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "在以下代码片段中，哪些操作有助于生成更具创造性的文本？",
         "options": [
             "提高temperature值",
@@ -7345,7 +7354,7 @@ window.QUESTIONS = [
     {
         "id": 534,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在文档切片过程中，以下哪些切片方法适合处理逻辑性强、内容专业的文档？",
         "options": [
             "语义切片",
@@ -7362,7 +7371,7 @@ window.QUESTIONS = [
     {
         "id": 535,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪些场景适合设置较高的top_p值？",
         "options": [
             "创意写作",
@@ -7379,7 +7388,7 @@ window.QUESTIONS = [
     {
         "id": 536,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在RAG应用的生成阶段，主要步骤包括哪些？",
         "options": [
             "召回最相关的文本段",
@@ -7396,7 +7405,7 @@ window.QUESTIONS = [
     {
         "id": 537,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 RAG 工作流程中，以下哪些是关键步骤？",
         "options": [
             "文档解析与切片阶段",
@@ -7415,7 +7424,7 @@ window.QUESTIONS = [
     {
         "id": 538,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "模型微调",
         "question": "RAG应用通常包含哪两个主要部分？",
         "options": [
             "建立索引",
@@ -7432,7 +7441,7 @@ window.QUESTIONS = [
     {
         "id": 539,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "评测与优化",
         "question": "在 Answer Correctness 的计算过程中，以下哪些是语义相似度的计算方法？",
         "options": [
             "余弦相似度",
@@ -7450,7 +7459,7 @@ window.QUESTIONS = [
     {
         "id": 540,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在私有知识问答场景中，直接传入私域知识相关的参考信息可能导致哪些问题？",
         "options": [
             "提示词长度有限",
@@ -7467,7 +7476,7 @@ window.QUESTIONS = [
     {
         "id": 541,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在优化 context recall 指标时，以下哪些是必要的步骤？",
         "options": [
             "对比知识库内容与测试样本",
@@ -7485,7 +7494,7 @@ window.QUESTIONS = [
     {
         "id": 542,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 context precision 的计算过程中，以下哪些步骤是必要的？",
         "options": [
             "按顺序读取 contexts 中的 contexti，判断其是否相关",
@@ -7503,7 +7512,7 @@ window.QUESTIONS = [
     {
         "id": 543,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在问题改写中，以下哪些方法通过大模型生成更完整的问题？",
         "options": [
             "使用大模型扩充用户问题",
@@ -7521,7 +7530,7 @@ window.QUESTIONS = [
     {
         "id": 544,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索阶段，以下哪些步骤是必要的？",
         "options": [
             "将用户问题转化为向量",
@@ -7538,7 +7547,7 @@ window.QUESTIONS = [
     {
         "id": 545,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，以下哪些是可能的处理流程？",
         "options": [
             "使用reviewed_prompt进行文档审查",
@@ -7557,7 +7566,7 @@ window.QUESTIONS = [
     {
         "id": 546,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词中，使用分隔符的主要优点包括哪些？",
         "options": [
             "使大模型抓住具体的目标",
@@ -7574,7 +7583,7 @@ window.QUESTIONS = [
     {
         "id": 547,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "以下哪些场景适合设置较高的temperature值？",
         "options": [
             "生成广告文案",
@@ -7591,7 +7600,7 @@ window.QUESTIONS = [
     {
         "id": 548,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在检索召回阶段，以下哪些方法通过增加更多信息让检索结果更全面？",
         "options": [
             "问题扩写",
@@ -7608,7 +7617,7 @@ window.QUESTIONS = [
     {
         "id": 549,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "大模型基础",
         "question": "top_p参数如何影响候选Token的筛选？",
         "options": [
             "高top_p值增加候选Token的范围",
@@ -7625,7 +7634,7 @@ window.QUESTIONS = [
     {
         "id": 550,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在ask_llm_route函数中，以下哪些是提示词中规定的任务要求？",
         "options": [
             "文档纠错专家需要言简意赅的回复",
@@ -7642,7 +7651,7 @@ window.QUESTIONS = [
     {
         "id": 551,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在 Answer Correctness 的计算过程中，以下哪些是 embedding 模型的作用？",
         "options": [
             "得到 answer 和 ground_trut的文本向量",
@@ -7659,7 +7668,7 @@ window.QUESTIONS = [
     {
         "id": 552,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "提示词工程",
         "question": "在提示词框架中，以下哪些要素是必要的？",
         "options": [
             "任务目标（Object）",
@@ -7678,7 +7687,7 @@ window.QUESTIONS = [
     {
         "id": 553,
         "type": "multiple",
-        "category": "阿里云大模型ACP",
+        "category": "RAG检索增强",
         "question": "在开发大语言模型RAG应用过程中，以下哪些描述符合“基于语义的文档切片”的理念?",
         "options": [
             "将文档按照固定长度进行切分",
