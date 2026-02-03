@@ -633,8 +633,43 @@ body {
         background: #312e81;
     }
     
+    .option-item.correct {
+        background: #064e3b;
+        border-color: #10b981;
+    }
+    
+    .option-item.correct .option-text {
+        color: #a7f3d0;
+    }
+    
+    .option-item.wrong {
+        background: #7f1d1d;
+        border-color: #ef4444;
+    }
+    
+    .option-item.wrong .option-text {
+        color: #fecaca;
+    }
+    
     .answer-item.correct-answer {
         background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    }
+    
+    .answer-item.selected-answer {
+        background: #1e1b4b;
+        border-left-color: #818cf8;
+    }
+    
+    .answer-highlight {
+        color: #6ee7b7;
+    }
+    
+    .answer-selected {
+        color: #a5b4fc;
+    }
+    
+    .answer-selected.wrong {
+        color: #fca5a5;
     }
     
     .answer-item strong {
