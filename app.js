@@ -334,6 +334,11 @@ function submitAnswer() {
     
     resultCard.classList.add('show');
     
+    // 自动滚动到答案区域
+    setTimeout(() => {
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+    
     // 更新进度
     if (!progress.completed.includes(question.id)) {
         progress.completed.push(question.id);
