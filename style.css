@@ -624,22 +624,16 @@ body {
 
 /* ==================== 模拟考试样式 ==================== */
 
-/* 考试入口按钮特殊样式 */
-.menu-item.exam-item {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 2px solid #f59e0b;
-    position: relative;
-}
-
-.menu-item.exam-item .menu-text {
+/* 模拟考试按钮描述文字 */
+.menu-item .menu-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.menu-item.exam-item .menu-desc {
+.menu-item .menu-desc {
     font-size: 12px;
-    color: #92400e;
+    color: var(--text-secondary);
     font-weight: 400;
     margin-top: 4px;
 }
@@ -1082,15 +1076,6 @@ body {
     }
     
     /* 暗色模式下的考试样式 */
-    .menu-item.exam-item {
-        background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
-        border-color: #b45309;
-    }
-    
-    .menu-item.exam-item .menu-desc {
-        color: #fde68a;
-    }
-    
     .exam-timer {
         background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
     }
